@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Thinktecture.IdentityServer.v3.Admin.WebClient
+namespace Thinktecture.IdentityServer.v3.Admin.Client
 {
     public class MvcApplication : HttpApplication
     {

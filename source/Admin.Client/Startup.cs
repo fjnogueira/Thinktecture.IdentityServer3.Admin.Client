@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(Thinktecture.IdentityServer.v3.Admin.WebClient.Startup))]
-namespace Thinktecture.IdentityServer.v3.Admin.WebClient
+[assembly: OwinStartupAttribute(typeof(Thinktecture.IdentityServer.v3.Admin.Client.Startup))]
+namespace Thinktecture.IdentityServer.v3.Admin.Client
 {
     public class Startup
     {
