@@ -2,11 +2,16 @@
     "use strict";
 
     /**
-     * @param $scope
      * @constructor
+     * @param $scope
+     * @param {ScopesWebApi} scopesWebApi
      */
-    function ScopeOverviewController($scope) {
-        
+    function ScopeOverviewController($scope, scopesWebApi) {
+
+        $scope.gridData = {};
+
+
+
     }
 
     app.module.controller('scopeOverviewController', ScopeOverviewController);

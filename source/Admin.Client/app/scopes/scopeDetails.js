@@ -2,10 +2,11 @@
     "use strict";
 
     /**
-     * @param $scope
      * @constructor
+     * @param $scope
+     * @param {ScopesWebApi} scopesWebApi
      */
-    function ScopeDetailsController($scope) {
+    function ScopeDetailsController($scope, scopesWebApi) {
         
     }
 

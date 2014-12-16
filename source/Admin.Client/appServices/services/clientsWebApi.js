@@ -3,8 +3,36 @@
 
     /**
      * @constructor
+     * @param {WebApi} webApi
      */
-    function ClientsWebApi() {
+    function ClientsWebApi(webApi) {
+
+        this.list = function (skip, take, searchTerm, sortColumns) {
+            return webApi.performGetRequest('client/list', {
+                skip: skip,
+                take: take,
+                searchTerm: searchTerm,
+                sortColumns: sortColumns
+            });
+        };
+
+        this.get = function (key) {
+            return webApi.performGetRequest('client/get', {
+                key: key
+            });
+        };
+
+        this.add = function (client) {
+            return webApi.performPutRequest('client/add', client);
+        };
+
+        this.update = function (client) {
+            return webApi.performPostRequest('client/update', client);
+        };
+
+        this.remove = function (key) {
+            return webApi.performDeleteRequest('client/delete', key);
+        };
 
     }
 
