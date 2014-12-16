@@ -54,7 +54,7 @@ window.thinktecture.translations.en = {
             "ALLOW_REMEMBER_CONSENT": "Allow Remember Consent",
             "FLOW": "Flow",
             "REDIRECT_URIS": "Redirect URIs",
-            "POST_LOGOUT_REDIRECT_URIS": "Post Logout Redirect URIs",
+            "POST_LOGOUT_REDIRECT_URIS": "POST Logout Redirect URIs",
             "SCOPE_RESTRICTIONS": "Scope Restrictions",
             "IDENTITY_TOKEN_LIFETIME": "Identity Token Lifetime",
             "ACCESS_TOKEN_LIFETIME": "Access Token Lifetime",
@@ -75,7 +75,11 @@ window.thinktecture.translations.en = {
         "DETAILS": {
             "TITLE": "Client Details",
             "SETTING": "Setting",
-            "VALUE": "Value"
+            "VALUE": "Value",
+            "NO_REDIRECT_URIS": "No redirect URIs are associated with this client.",
+            "NO_POST_LOGOUT_REDIRECT_URIS": "No POST logout redirect URIs are associated with this client.",
+            "NO_SCOPE_RESTRICTIONS": "No scope restrictions are associated with this client.",
+            "NO_IDENTITY_PROVIDER_RESTRICTIONS": "No identity provider restrictions are associated with this client."
         },
         "ERRORS": {
             "COULD_NOT_LOAD_DETAILS": "Details could not be loaded for client with ID “{{clientId}}”."

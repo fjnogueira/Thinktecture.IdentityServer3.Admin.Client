@@ -90,6 +90,53 @@
 </table>
 
 <h2 translate>CLIENTS.COMMON.REDIRECT_URIS</h2>
+
+<table class="table table-striped">
+<tbody>
+<tr ng-repeat="redirectUri in client.redirectUris">
+   <td>{{redirectUri.uri}}</td>
+</tr>
+<tr ng-hide="client.redirectUris">
+   <td class="text-center" translate>CLIENTS.DETAILS.NO_REDIRECT_URIS</td>
+</tr>
+</tbody>
+</table>
+
 <h2 translate>CLIENTS.COMMON.POST_LOGOUT_REDIRECT_URIS</h2>
+
+<table class="table table-striped">
+    <tbody>
+    <tr ng-repeat="postLogoutRedirectUri in client.postLogoutRedirectUris">
+        <td>{{postLogoutRedirectUri.uri}}</td>
+    </tr>
+    <tr ng-hide="client.postLogoutRedirectUris">
+        <td class="text-center" translate>CLIENTS.DETAILS.NO_POST_LOGOUT_REDIRECT_URIS</td>
+    </tr>
+    </tbody>
+</table>
+
 <h2 translate>CLIENTS.COMMON.SCOPE_RESTRICTIONS</h2>
+
+<table class="table table-striped">
+    <tbody>
+    <tr ng-repeat="scopeRestriction in client.scopeRestrictions">
+        <td>{{scopeRestriction.scope}}</td>
+    </tr>
+    <tr ng-hide="client.scopeRestrictions">
+        <td class="text-center" translate>CLIENTS.DETAILS.NO_SCOPE_RESTRICTIONS</td>
+    </tr>
+    </tbody>
+</table>
+
 <h2 translate>CLIENTS.COMMON.IDENTITY_PROVIDER_RESTRICTIONS</h2>
+
+<table class="table table-striped">
+    <tbody>
+    <tr ng-repeat="identityProviderRestriction in client.identityProviderRestrictions">
+        <td>{{identityProviderRestriction.provider}}</td>
+    </tr>
+    <tr ng-hide="client.identityProviderRestrictions">
+        <td class="text-center" translate>CLIENTS.DETAILS.NO_IDENTITY_PROVIDER_RESTRICTIONS</td>
+    </tr>
+    </tbody>
+</table>
