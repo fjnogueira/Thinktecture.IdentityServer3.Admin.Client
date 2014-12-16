@@ -92,6 +92,7 @@ window.thinktecture.translations.en = {
             "OFF": "Off",
             "YES": "Yes",
             "NO": "No"
-        }
+        },
+        "NO_DATA": "No data"
     }
 };
