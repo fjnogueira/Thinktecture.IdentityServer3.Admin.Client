@@ -6,14 +6,15 @@ $(function () {
     "use strict";
 
     window.app = window.app || { resolver: {} };
-    app.module = angular.module('ttIdentityAdmin', ['ui.router', 'ui.notify']);
+    app.module = angular.module('ttIdentityAdmin', ['ui.router', 'ui.notify', 'pascalprecht.translate']);
 
     app.module
         .config(
         /**
          * @param $httpProvider
+         * @param $translateProvider
          */
-        function ($httpProvider) {
+        function ($httpProvider, $translateProvider) {
 
             $httpProvider.interceptors.push(function ($q, $timeout) {
 
@@ -51,5 +52,9 @@ $(function () {
                 };
 
             });
+
+            $translateProvider
+                .translations("en", thinktecture.translations.en)
+                .preferredLanguage("en");
         });
 })();
