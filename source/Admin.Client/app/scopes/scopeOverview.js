@@ -6,8 +6,10 @@
      * @param $scope
      * @param {ScopesWebApi} scopesWebApi
      * @param {CellTemplate} cellTemplate
+     * @param {UiHelper} uiHelper
+     * @param $translate
      */
-    function ScopeOverviewController($scope, scopesWebApi, cellTemplate) {
+    function ScopeOverviewController($scope, scopesWebApi, cellTemplate, uiHelper, $translate) {
 
         $scope.gridOptions = {
             columnDefs: [
@@ -26,6 +28,8 @@
             return scopesWebApi.list(0, 10, null, null)
                 .then(function (data) {
                    $scope.gridOptions.data = data.items;
+                }, function (err) {
+                    uiHelper.showErrorMessage(err, $translate.instant('SCOPES.ERRORS.COULD_NOT_LOAD_OVERVIEW'))
                 });
         };
 

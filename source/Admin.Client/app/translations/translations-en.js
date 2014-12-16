@@ -38,7 +38,8 @@ window.thinktecture.translations.en = {
             "VALUE": "Value"
         },
         "ERRORS": {
-            "COULD_NOT_LOAD_DETAILS": "Details could not be loaded for scope with ID “{{scopeId}}”."
+            "COULD_NOT_LOAD_DETAILS": "Details could not be loaded for scope with ID “{{scopeId}}”.",
+            "COULD_NOT_LOAD_OVERVIEW": "Scopes could not be loaded."
         }
     },
 
@@ -62,7 +63,7 @@ window.thinktecture.translations.en = {
             "ABSOLUTE_REFRESH_TOKEN_LIFETIME": "Absolute Refresh Token Lifetime",
             "SLIDING_REFRESH_TOKEN_LIFETIME": "Sliding Refresh Token Lifetime",
             "REFRESH_TOKEN_USAGE": "Refresh Token Usage",
-            "REFRESH_TOKEN_EXPIRATION": "RefreshTokenExpiration",
+            "REFRESH_TOKEN_EXPIRATION": "Refresh Token Expiration",
             "IDENTITY_TOKEN_SIGNING_KEY_TYPE": "Identity Token Signing Key Type",
             "ACCESS_TOKEN_TYPE": "Access Token Type",
             "ALLOW_LOCAL_LOGIN": "Allow Local Login",
@@ -82,7 +83,8 @@ window.thinktecture.translations.en = {
             "NO_IDENTITY_PROVIDER_RESTRICTIONS": "No identity provider restrictions are associated with this client."
         },
         "ERRORS": {
-            "COULD_NOT_LOAD_DETAILS": "Details could not be loaded for client with ID “{{clientId}}”."
+            "COULD_NOT_LOAD_DETAILS": "Details could not be loaded for client with ID “{{clientId}}”.",
+            "COULD_NOT_LOAD_OVERVIEW": "Clients could not be loaded."
         }
     },
 

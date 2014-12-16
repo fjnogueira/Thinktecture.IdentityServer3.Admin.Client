@@ -20,13 +20,13 @@
 
         $templateCache.put(templateFileNames.scope,
             '<div class="ui-grid-cell-contents">' +
-            '<a ui-sref="scopes.details({scopeId:row.entity.id})">{{COL_FIELD}}</a>' +
+            '<a ui-sref="scopes.details({ scopeId: row.entity.id })">{{COL_FIELD}}</a>' +
             '</div>'
         );
 
         $templateCache.put(templateFileNames.client,
             '<div class="ui-grid-cell-contents">' +
-            '<a ui-sref="clients.details({scopeId:row.entity.id})">{{COL_FIELD}}</a>' +
+            '<a ui-sref="clients.details({ clientId: row.entity.id })">{{COL_FIELD}}</a>' +
             '</div>'
         );
 
