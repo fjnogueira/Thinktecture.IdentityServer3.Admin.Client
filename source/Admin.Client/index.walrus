@@ -6,13 +6,16 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
 
+    <title>Thinktecture IdentityServer v3 Admin</title>
+
     <style>
-		[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-		  display: none !important;
-		}
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
     </style>
 
-    <title>Thinktecture IdentityServer v3 Admin</title>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+
     {{bundler.renderStyles("~/styles")}}
 </head>
 <body ng-controller="appController">
