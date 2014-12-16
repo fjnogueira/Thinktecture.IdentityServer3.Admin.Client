@@ -11,7 +11,7 @@
 
         $scope.gridOptions = {
             columnDefs: [
-                { field: 'displayName' },
+                { field: 'displayName', cellTemplate: cellTemplate.templates.scope },
                 { field: 'description' },
                 { field: 'required', cellTemplate: cellTemplate.templates.bool },
                 { field: 'enabled', cellTemplate: cellTemplate.templates.bool }
