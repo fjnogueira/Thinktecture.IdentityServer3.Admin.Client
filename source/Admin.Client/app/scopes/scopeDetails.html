@@ -1,1 +1,73 @@
 <h1>{{ 'SCOPES.DETAILS.TITLE' | translate }}</h1>
+
+<table class="table table-striped">
+<thead>
+<tr>
+    <th>{{ 'SCOPES.DETAILS.SETTING' | translate }}</th>
+    <th>{{ 'SCOPES.DETAILS.VALUE' | translate }}</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>{{ 'SCOPES.COMMON.ENABLED' | translate }}</td>
+    <td><translated-toggle ng-model="scope.enabled"></translated-toggle></td>
+</tr>
+<tr>
+    <td>{{ 'SCOPES.COMMON.NAME' | translate }}</td>
+    <td>{{ scope.name }}</td>
+</tr>
+<tr>
+    <td>{{ 'SCOPES.COMMON.DISPLAY_NAME' | translate }}</td>
+    <td>{{ scope.displayName }}</td>
+</tr>
+<tr>
+    <td>{{ 'SCOPES.COMMON.DESCRIPTION' | translate }}</td>
+    <td>{{ scope.description }}</td>
+</tr>
+<tr>
+    <td>{{ 'SCOPES.COMMON.TYPE' | translate }}</td>
+    <td>{{ scope.type }}</td>
+</tr>
+<tr>
+    <td>{{ 'SCOPES.COMMON.CLAIMS_RULE' | translate }}</td>
+    <td>{{ scope.claimsRule }}</td>
+</tr>
+<tr>
+    <td>{{ 'SCOPES.COMMON.REQUIRED' | translate }}</td>
+    <td><translated-toggle ng-model="scope.required"></translated-toggle></td>
+</tr>
+<tr>
+    <td>{{ 'SCOPES.COMMON.EMPHASIZE' | translate }}</td>
+    <td><translated-toggle ng-model="scope.emphasize"></translated-toggle></td>
+</tr>
+<tr>
+    <td>{{ 'SCOPES.COMMON.INCLUDE_ALL_CLAIMS_FOR_USER' | translate }}</td>
+    <td><translated-toggle ng-model="scope.includeAllClaimsForUser"></translated-toggle></td>
+</tr>
+<tr>
+    <td>{{ 'SCOPES.COMMON.SHOW_IN_DISCOVERY_DOCUMENT' | translate }}</td>
+    <td><translated-toggle ng-model="scope.showInDiscoveryDocument"></translated-toggle></td>
+</tr>
+</tbody>
+</table>
+
+<h2>{{ 'SCOPES.COMMON.CLAIMS' | translate }}</h2>
+<table class="table table-striped">
+<thead>
+<tr>
+    <th>{{ 'SCOPES.COMMON.NAME' | translate }}</th>
+    <th>{{ 'SCOPES.COMMON.DESCRIPTION' | translate }}</th>
+    <th>{{ 'SCOPES.DETAILS.ALWAYS_INCLUDE_IN_ID_TOKEN' | translate }}</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="claim in scope.scopeClaims">
+    <td>{{ claim.name }}</td>
+    <td>{{ claim.description }}</td>
+    <td><translated-toggle ng-model="claim.alwaysIncludeInIdToken"></translated-toggle></td>
+</tr>
+<tr ng-hide="scope.Claims">
+    <td colspan="3" class="text-center">{{ 'SCOPES.DETAILS.NO_CLAIMS' | translate }}</td>
+</tr>
+</tbody>
+</table>

@@ -10,7 +10,9 @@
 
         $scope.gridData = {};
 
-
+        $scope.model = {
+            toggle: true
+        };
 
     }
 
