@@ -160,9 +160,47 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app.js" />
+    <Content Include="appServices\directives\navbar.html" />
+    <Content Include="appServices\directives\navbar.js" />
+    <Content Include="appServices\services\clientsWebApi.js" />
+    <Content Include="appServices\services\configuration.js" />
+    <Content Include="appServices\services\scopesWebApi.js" />
+    <Content Include="appServices\services\uiHelper.js" />
+    <Content Include="appServices\services\webApi.js" />
+    <Content Include="app\appController.js" />
+    <Content Include="app\clients\clientDetails.html" />
+    <Content Include="app\clients\clientDetails.js" />
+    <Content Include="app\clients\clientOverview.html" />
+    <Content Include="app\clients\clientOverview.js" />
+    <Content Include="app\routing.js" />
+    <Content Include="app\scopes\scopeDetails.html" />
+    <Content Include="app\scopes\scopeDetails.js" />
+    <Content Include="app\scopes\scopeOverview.html" />
+    <Content Include="app\scopes\scopeOverview.js" />
+    <Content Include="app\start\start.html" />
+    <Content Include="app\start\start.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="index.cshtml" />
+    <Content Include="libs\02_font-awesome\css\font-awesome.css" />
+    <Content Include="libs\02_font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="libs\05_fastclick\fastclick.js" />
+    <Content Include="libs\06_jquery\jquery.js" />
+    <Content Include="libs\10_bootstrap\bootstrap-theme.css" />
+    <Content Include="libs\10_bootstrap\bootstrap.css" />
+    <Content Include="libs\10_bootstrap\bootstrap.js" />
+    <Content Include="libs\10_bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="libs\20_angularjs\angular.js" />
+    <Content Include="libs\21_angular-extras\angular-locale_de-de.js" />
+    <Content Include="libs\21_ui-router\angular-ui-router.js" />
+    <Content Include="libs\22_ui-grid\ui-grid-unstable.css" />
+    <Content Include="libs\22_ui-grid\ui-grid-unstable.js" />
+    <Content Include="libs\22_ui-grid\ui-grid-unstable.svg" />
+    <Content Include="libs\52_pnotify\pnotify.custom.css" />
+    <Content Include="libs\52_pnotify\pnotify.custom.js" />
+    <Content Include="libs\52_pnotify\pnotify.js" />
+    <Content Include="libs\99_appInit\appInit.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -172,18 +210,54 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="appServices\directives\" />
     <Folder Include="appServices\filters\" />
-    <Folder Include="appServices\services\" />
-    <Folder Include="app\" />
     <Folder Include="App_Data\" />
     <Folder Include="assets\" />
-    <Folder Include="libs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="libs\02_font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="libs\02_font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="libs\02_font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="libs\02_font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="libs\02_font-awesome\less\bordered-pulled.less" />
+    <Content Include="libs\02_font-awesome\less\core.less" />
+    <Content Include="libs\02_font-awesome\less\fixed-width.less" />
+    <Content Include="libs\02_font-awesome\less\font-awesome.less" />
+    <Content Include="libs\02_font-awesome\less\icons.less" />
+    <Content Include="libs\02_font-awesome\less\larger.less" />
+    <Content Include="libs\02_font-awesome\less\list.less" />
+    <Content Include="libs\02_font-awesome\less\mixins.less" />
+    <Content Include="libs\02_font-awesome\less\path.less" />
+    <Content Include="libs\02_font-awesome\less\rotated-flipped.less" />
+    <Content Include="libs\02_font-awesome\less\spinning.less" />
+    <Content Include="libs\02_font-awesome\less\stacked.less" />
+    <Content Include="libs\02_font-awesome\less\variables.less" />
+    <Content Include="libs\02_font-awesome\scss\font-awesome.scss" />
+    <Content Include="libs\02_font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="libs\02_font-awesome\scss\_core.scss" />
+    <Content Include="libs\02_font-awesome\scss\_fixed-width.scss" />
+    <Content Include="libs\02_font-awesome\scss\_icons.scss" />
+    <Content Include="libs\02_font-awesome\scss\_larger.scss" />
+    <Content Include="libs\02_font-awesome\scss\_list.scss" />
+    <Content Include="libs\02_font-awesome\scss\_mixins.scss" />
+    <Content Include="libs\02_font-awesome\scss\_path.scss" />
+    <Content Include="libs\02_font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="libs\02_font-awesome\scss\_spinning.scss" />
+    <Content Include="libs\02_font-awesome\scss\_stacked.scss" />
+    <Content Include="libs\02_font-awesome\scss\_variables.scss" />
+    <Content Include="libs\10_bootstrap\bootstrap-theme.css.map" />
+    <Content Include="libs\10_bootstrap\bootstrap.css.map" />
+    <Content Include="libs\10_bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="libs\10_bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="libs\10_bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="libs\22_ui-grid\ui-grid-unstable.eot" />
+    <Content Include="libs\22_ui-grid\ui-grid-unstable.ttf" />
+    <Content Include="libs\22_ui-grid\ui-grid-unstable.woff" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
