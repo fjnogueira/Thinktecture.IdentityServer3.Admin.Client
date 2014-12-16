@@ -43,11 +43,39 @@ window.thinktecture.translations.en = {
     },
 
     "CLIENTS": {
+        "COMMON": {
+            "ENABLED": "State",
+            "CLIENT_ID": "Client ID",
+            "CLIENT_SECRET": "Client Secret",
+            "CLIENT_NAME": "Client Name",
+            "CLIENT_URI": "Client URI",
+            "LOGO_URI": "Logo URI",
+            "REQUIRE_CONSENT": "Require Consent",
+            "ALLOW_REMEMBER_CONSENT": "Allow Remember Consent",
+            "FLOW": "Flow",
+            "REDIRECT_URIS": "Redirect URIs",
+            "POST_LOGOUT_REDIRECT_URIS": "Post Logout Redirect URIs",
+            "SCOPE_RESTRICTIONS": "Scope Restrictions",
+            "IDENTITY_TOKEN_LIFETIME": "Identity Token Lifetime",
+            "ACCESS_TOKEN_LIFETIME": "Access Token Lifetime",
+            "AUTHORIZATION_CODE_LIFETIME": "Authorization Code Lifetime",
+            "ABSOLUTE_REFRESH_TOKEN_LIFETIME": "Absolute Refresh Token Lifetime",
+            "SLIDING_REFRESH_TOKEN_LIFETIME": "Sliding Refresh Token Lifetime",
+            "REFRESH_TOKEN_USAGE": "Refresh Token Usage",
+            "REFRESH_TOKEN_EXPIRATION": "RefreshTokenExpiration",
+            "IDENTITY_TOKEN_SIGNING_KEY_TYPE": "Identity Token Signing Key Type",
+            "ACCESS_TOKEN_TYPE": "Access Token Type",
+            "ALLOW_LOCAL_LOGIN": "Allow Local Login",
+            "IDENTITY_PROVIDER_RESTRICTIONS": "Identity Provider Restrictions",
+            "INCLUDE_JWT_ID": "Include JWT ID"
+        },
         "OVERVIEW": {
             "TITLE": "Clients"
         },
         "DETAILS": {
-            "TITLE": "Client Details"
+            "TITLE": "Client Details",
+            "SETTING": "Setting",
+            "VALUE": "Value"
         },
         "ERRORS": {
             "COULD_NOT_LOAD_DETAILS": "Details could not be loaded for client with ID “{{clientId}}”."

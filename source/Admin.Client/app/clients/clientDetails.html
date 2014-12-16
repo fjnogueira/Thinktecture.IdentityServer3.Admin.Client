@@ -1,3 +1,95 @@
 <div class="page-header">
     <h1 translate>CLIENTS.DETAILS.TITLE</h1>
 </div>
+
+<table class="table table-striped">
+<thead>
+<tr>
+    <th>{{ 'CLIENTS.DETAILS.SETTING' | translate }}</th>
+    <th>{{ 'CLIENTS.DETAILS.VALUE' | translate }}</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>{{ 'CLIENTS.COMMON.ENABLED' | translate }}</td>
+    <td><on-off-toggle ng-model="client.enabled"></on-off-toggle></td>
+</tr>
+<tr>
+    <td>{{ 'CLIENTS.COMMON.CLIENT_ID' | translate }}</td>
+    <td>{{ client.clientId }}</td>
+</tr>
+<tr>
+    <td>{{ 'CLIENTS.COMMON.CLIENT_SECRET' | translate }}</td>
+    <td>{{ client.clientSecret }}</td>
+</tr>
+<tr>
+    <td>{{ 'CLIENTS.COMMON.CLIENT_NAME' | translate }}</td>
+    <td>{{ client.clientName }}</td>
+</tr>
+<tr>
+    <td>{{ 'CLIENTS.COMMON.CLIENT_URI' | translate }}</td>
+    <td>{{ client.clientUri }}</td>
+</tr>
+<tr>
+    <td>{{ 'CLIENTS.COMMON.LOGO_URI' | translate }}</td>
+    <td>{{ client.logoUri }}</td>
+</tr>
+<tr>
+    <td>{{ 'CLIENTS.COMMON.REQUIRE_CONSENT' | translate }}</td>
+    <td><yes-no-toggle ng-model="client.requireConsent"></yes-no-toggle></td>
+</tr>
+<tr>
+    <td>{{ 'CLIENTS.COMMON.ALLOW_REMEMBER_CONSENT' | translate }}</td>
+    <td><yes-no-toggle ng-model="client.allowRememberConsent"></yes-no-toggle></td>
+</tr>
+<tr>
+    <td>{{ 'CLIENTS.COMMON.IDENTITY_TOKEN_LIFETIME' | translate }}</td>
+    <td>{{ client.identityTokenLifetime }}</td>
+</tr>
+<tr>
+    <td>{{ 'CLIENTS.COMMON.ACCESS_TOKEN_LIFETIME' | translate }}</td>
+    <td>{{ client.accessTokenLifetime }}</td>
+</tr>
+<tr>
+    <td>{{ 'CLIENTS.COMMON.AUTHORIZATION_CODE_LIFETIME' | translate }}</td>
+    <td>{{ client.authorizationCodeLifetime }}</td>
+</tr>
+<tr>
+    <td>{{ 'CLIENTS.COMMON.ABSOLUTE_REFRESH_TOKEN_LIFETIME' | translate }}</td>
+    <td>{{ client.absoluteRefreshTokenLifetime }}</td>
+</tr>
+<tr>
+    <td>{{ 'CLIENTS.COMMON.SLIDING_REFRESH_TOKEN_LIFETIME' | translate }}</td>
+    <td>{{ client.slidingRefreshTokenLifetime }}</td>
+</tr>
+<tr>
+    <td>{{ 'CLIENTS.COMMON.REFRESH_TOKEN_USAGE' | translate }}</td>
+    <td>{{ client.refreshTokenUsage }}</td>
+</tr>
+<tr>
+    <td>{{ 'CLIENTS.COMMON.REFRESH_TOKEN_EXPIRATION' | translate }}</td>
+    <td>{{ client.refreshTokenExpiration }}</td>
+</tr>
+<tr>
+    <td>{{ 'CLIENTS.COMMON.IDENTITY_TOKEN_SIGNING_KEY_TYPE' | translate }}</td>
+    <td>{{ client.identityTokenSigningKeyType }}</td>
+</tr>
+<tr>
+    <td>{{ 'CLIENTS.COMMON.ACCESS_TOKEN_TYPE' | translate }}</td>
+    <td>{{ client.accessTokenType }}</td>
+</tr>
+<tr>
+    <td>{{ 'CLIENTS.COMMON.ALLOW_LOCAL_LOGIN' | translate }}</td>
+    <td><yes-no-toggle ng-model="client.allowLocalLogin"></yes-no-toggle></td>
+</tr>
+<tr>
+    <td>{{ 'CLIENTS.COMMON.INCLUDE_JWT_ID' | translate }}</td>
+    <td><yes-no-toggle ng-model="client.includeJwtId"></yes-no-toggle></td>
+</tr>
+</tbody>
+</table>
+
+<h2 translate>CLIENTS.COMMON.REDIRECT_URIS</h2>
+<h2 translate>CLIENTS.COMMON.POST_LOGOUT_REDIRECT_URIS</h2>
+<h2 translate>CLIENTS.COMMON.SCOPE_RESTRICTIONS</h2>
+<h2 translate>CLIENTS.COMMON.IDENTITY_PROVIDER_RESTRICTIONS</h2>
