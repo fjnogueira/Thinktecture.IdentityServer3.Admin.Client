@@ -54,7 +54,9 @@ window.thinktecture.translations.en = {
     "COMMON": {
         "TOGGLES": {
             "ON": "On",
-            "OFF": "Off"
+            "OFF": "Off",
+            "YES": "Yes",
+            "NO": "No"
         }
     }
 };

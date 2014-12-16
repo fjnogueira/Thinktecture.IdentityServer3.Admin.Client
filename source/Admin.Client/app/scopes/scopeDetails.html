@@ -12,7 +12,7 @@
 <tbody>
 <tr>
     <td>{{ 'SCOPES.COMMON.ENABLED' | translate }}</td>
-    <td><translated-toggle ng-model="scope.enabled"></translated-toggle></td>
+    <td><on-off-toggle ng-model="scope.enabled"></on-off-toggle></td>
 </tr>
 <tr>
     <td>{{ 'SCOPES.COMMON.NAME' | translate }}</td>
@@ -36,19 +36,19 @@
 </tr>
 <tr>
     <td>{{ 'SCOPES.COMMON.REQUIRED' | translate }}</td>
-    <td><translated-toggle ng-model="scope.required"></translated-toggle></td>
+    <td><yes-no-toggle ng-model="scope.required"></yes-no-toggle></td>
 </tr>
 <tr>
     <td>{{ 'SCOPES.COMMON.EMPHASIZE' | translate }}</td>
-    <td><translated-toggle ng-model="scope.emphasize"></translated-toggle></td>
+    <td><yes-no-toggle ng-model="scope.emphasize"></yes-no-toggle></td>
 </tr>
 <tr>
     <td>{{ 'SCOPES.COMMON.INCLUDE_ALL_CLAIMS_FOR_USER' | translate }}</td>
-    <td><translated-toggle ng-model="scope.includeAllClaimsForUser"></translated-toggle></td>
+    <td><yes-no-toggle ng-model="scope.includeAllClaimsForUser"></yes-no-toggle></td>
 </tr>
 <tr>
     <td>{{ 'SCOPES.COMMON.SHOW_IN_DISCOVERY_DOCUMENT' | translate }}</td>
-    <td><translated-toggle ng-model="scope.showInDiscoveryDocument"></translated-toggle></td>
+    <td><yes-no-toggle ng-model="scope.showInDiscoveryDocument"></yes-no-toggle></td>
 </tr>
 </tbody>
 </table>
@@ -66,7 +66,7 @@
 <tr ng-repeat="claim in scope.scopeClaims">
     <td>{{ claim.name }}</td>
     <td>{{ claim.description }}</td>
-    <td><translated-toggle ng-model="claim.alwaysIncludeInIdToken"></translated-toggle></td>
+    <td><yes-no-toggle ng-model="claim.alwaysIncludeInIdToken"></yes-no-toggle></td>
 </tr>
 <tr ng-hide="scope.Claims">
     <td colspan="3" class="text-center">{{ 'SCOPES.DETAILS.NO_CLAIMS' | translate }}</td>
