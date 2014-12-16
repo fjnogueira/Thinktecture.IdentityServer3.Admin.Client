@@ -25,5 +25,12 @@ window.thinktecture.translations.en = {
         "DETAILS": {
             "TITLE": "Client Details"
         }
+    },
+
+    "COMMON": {
+        "TOGGLES": {
+            "ON": "On",
+            "OFF": "Off"
+        }
     }
 };

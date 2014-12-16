@@ -6,7 +6,7 @@ $(function () {
     "use strict";
 
     window.app = window.app || { resolver: {} };
-    app.module = angular.module('ttIdentityAdmin', ['ui.router', 'ui.notify', 'pascalprecht.translate']);
+    app.module = angular.module('ttIdentityAdmin', ['ui.router', 'ui.notify', 'pascalprecht.translate', 'toggle-switch']);
 
     app.module
         .config(
