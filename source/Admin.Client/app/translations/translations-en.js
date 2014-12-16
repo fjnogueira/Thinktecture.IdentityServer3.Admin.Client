@@ -36,6 +36,9 @@ window.thinktecture.translations.en = {
             "NO_CLAIMS": "No claims are associated with this scope.",
             "SETTING": "Setting",
             "VALUE": "Value"
+        },
+        "ERRORS": {
+            "COULD_NOT_LOAD_DETAILS": "Details could not be loaded for scope with ID “{{scopeId}}”."
         }
     },
 
