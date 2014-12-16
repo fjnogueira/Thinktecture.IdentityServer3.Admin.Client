@@ -48,6 +48,9 @@ window.thinktecture.translations.en = {
         },
         "DETAILS": {
             "TITLE": "Client Details"
+        },
+        "ERRORS": {
+            "COULD_NOT_LOAD_DETAILS": "Details could not be loaded for client with ID “{{clientId}}”."
         }
     },
 
