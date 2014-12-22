@@ -39,6 +39,29 @@
             return errorMessage;
         };
 
+        /**
+         * Creates an error notification
+         * @param content
+         */
+        this.error = notificationService.error;
+
+        /**
+         * Creates a notice notification
+         * @param content
+         */
+        this.notice = notificationService.notice;
+
+        /**
+         * Creates a success notification
+         * @param content
+         */
+        this.success = notificationService.success;
+
+        /**
+         * Creates an info notification
+         * @param content
+         */
+        this.info = notificationService.info;
     }
 
     app.module.service('uiHelper', UiHelper);
