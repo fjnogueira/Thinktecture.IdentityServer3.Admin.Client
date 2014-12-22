@@ -2,74 +2,86 @@
     <h1 translate>SCOPES.DETAILS.TITLE</h1>
 </div>
 
-<table class="table table-striped">
-<thead>
-<tr>
-    <th>{{ 'SCOPES.DETAILS.SETTING' | translate }}</th>
-    <th>{{ 'SCOPES.DETAILS.VALUE' | translate }}</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td>{{ 'SCOPES.COMMON.ENABLED' | translate }}</td>
-    <td><on-off-toggle ng-model="scope.enabled"></on-off-toggle></td>
-</tr>
-<tr>
-    <td>{{ 'SCOPES.COMMON.NAME' | translate }}</td>
-    <td>{{ scope.name }}</td>
-</tr>
-<tr>
-    <td>{{ 'SCOPES.COMMON.DISPLAY_NAME' | translate }}</td>
-    <td>{{ scope.displayName }}</td>
-</tr>
-<tr>
-    <td>{{ 'SCOPES.COMMON.DESCRIPTION' | translate }}</td>
-    <td>{{ scope.description }}</td>
-</tr>
-<tr>
-    <td>{{ 'SCOPES.COMMON.TYPE' | translate }}</td>
-    <td>{{ scope.type }}</td>
-</tr>
-<tr>
-    <td>{{ 'SCOPES.COMMON.CLAIMS_RULE' | translate }}</td>
-    <td>{{ scope.claimsRule }}</td>
-</tr>
-<tr>
-    <td>{{ 'SCOPES.COMMON.REQUIRED' | translate }}</td>
-    <td><yes-no-toggle ng-model="scope.required"></yes-no-toggle></td>
-</tr>
-<tr>
-    <td>{{ 'SCOPES.COMMON.EMPHASIZE' | translate }}</td>
-    <td><yes-no-toggle ng-model="scope.emphasize"></yes-no-toggle></td>
-</tr>
-<tr>
-    <td>{{ 'SCOPES.COMMON.INCLUDE_ALL_CLAIMS_FOR_USER' | translate }}</td>
-    <td><yes-no-toggle ng-model="scope.includeAllClaimsForUser"></yes-no-toggle></td>
-</tr>
-<tr>
-    <td>{{ 'SCOPES.COMMON.SHOW_IN_DISCOVERY_DOCUMENT' | translate }}</td>
-    <td><yes-no-toggle ng-model="scope.showInDiscoveryDocument"></yes-no-toggle></td>
-</tr>
-</tbody>
+<table class="table table-striped scopeOverviewTable" ng-if="scope">
+    <thead>
+    <tr>
+        <th>{{ 'SCOPES.DETAILS.SETTING' | translate }}</th>
+        <th>{{ 'SCOPES.DETAILS.VALUE' | translate }}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ 'SCOPES.COMMON.ENABLED' | translate }}</td>
+        <td>
+            <on-off-toggle ng-model="scope.enabled"></on-off-toggle>
+        </td>
+    </tr>
+    <tr>
+        <td>{{ 'SCOPES.COMMON.NAME' | translate }}</td>
+        <td><a href="#" editable-text="scope.name" onaftersave="save()">{{ scope.name }}</a></td>
+    </tr>
+    <tr>
+        <td>{{ 'SCOPES.COMMON.DISPLAY_NAME' | translate }}</td>
+        <td><a href="#" editable-text="scope.displayName" onaftersave="save()">{{ scope.displayName }}</a></td>
+    </tr>
+    <tr>
+        <td>{{ 'SCOPES.COMMON.DESCRIPTION' | translate }}</td>
+        <td><a href="#" editable-text="scope.description" onaftersave="save()">{{ scope.description }}</a></td>
+    </tr>
+    <tr>
+        <td>{{ 'SCOPES.COMMON.TYPE' | translate }}</td>
+        <td><a href="#" editable-select="scope.type" e-ng-options="item.value.enumValue as item.value.text for item in scopeTypes" onaftersave="save()">{{ showScopeType() }}</a></td>
+    </tr>
+    <tr>
+        <td>{{ 'SCOPES.COMMON.CLAIMS_RULE' | translate }}</td>
+        <td>{{ scope.claimsRule }}</td>
+    </tr>
+    <tr>
+        <td>{{ 'SCOPES.COMMON.REQUIRED' | translate }}</td>
+        <td>
+            <yes-no-toggle ng-model="scope.required"></yes-no-toggle>
+        </td>
+    </tr>
+    <tr>
+        <td>{{ 'SCOPES.COMMON.EMPHASIZE' | translate }}</td>
+        <td>
+            <yes-no-toggle ng-model="scope.emphasize"></yes-no-toggle>
+        </td>
+    </tr>
+    <tr>
+        <td>{{ 'SCOPES.COMMON.INCLUDE_ALL_CLAIMS_FOR_USER' | translate }}</td>
+        <td>
+            <yes-no-toggle ng-model="scope.includeAllClaimsForUser"></yes-no-toggle>
+        </td>
+    </tr>
+    <tr>
+        <td>{{ 'SCOPES.COMMON.SHOW_IN_DISCOVERY_DOCUMENT' | translate }}</td>
+        <td>
+            <yes-no-toggle ng-model="scope.showInDiscoveryDocument"></yes-no-toggle>
+        </td>
+    </tr>
+    </tbody>
 </table>
 
 <h2 translate>SCOPES.COMMON.CLAIMS</h2>
 <table class="table table-striped">
-<thead>
-<tr>
-    <th>{{ 'SCOPES.COMMON.NAME' | translate }}</th>
-    <th>{{ 'SCOPES.COMMON.DESCRIPTION' | translate }}</th>
-    <th>{{ 'SCOPES.DETAILS.ALWAYS_INCLUDE_IN_ID_TOKEN' | translate }}</th>
-</tr>
-</thead>
-<tbody>
-<tr ng-repeat="claim in scope.scopeClaims">
-    <td>{{ claim.name }}</td>
-    <td>{{ claim.description }}</td>
-    <td><yes-no-toggle ng-model="claim.alwaysIncludeInIdToken"></yes-no-toggle></td>
-</tr>
-<tr ng-hide="scope.Claims">
-    <td colspan="3" class="text-center">{{ 'SCOPES.DETAILS.NO_CLAIMS' | translate }}</td>
-</tr>
-</tbody>
+    <thead>
+    <tr>
+        <th>{{ 'SCOPES.COMMON.NAME' | translate }}</th>
+        <th>{{ 'SCOPES.COMMON.DESCRIPTION' | translate }}</th>
+        <th>{{ 'SCOPES.DETAILS.ALWAYS_INCLUDE_IN_ID_TOKEN' | translate }}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="claim in scope.scopeClaims">
+        <td>{{ claim.name }}</td>
+        <td>{{ claim.description }}</td>
+        <td>
+            <yes-no-toggle ng-model="claim.alwaysIncludeInIdToken"></yes-no-toggle>
+        </td>
+    </tr>
+    <tr ng-hide="scope.Claims">
+        <td colspan="3" class="text-center">{{ 'SCOPES.DETAILS.NO_CLAIMS' | translate }}</td>
+    </tr>
+    </tbody>
 </table>

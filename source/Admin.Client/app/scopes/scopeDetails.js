@@ -4,14 +4,16 @@
     /**
      * @constructor
      * @param $scope
+     * @param $translate
      * @param $stateParams
      * @param {ScopesWebApi} scopesWebApi
      * @param {UiHelper} uiHelper
-     * @param $translate
+     * @param {LookupContainer} lookupContainer
      */
-    function ScopeDetailsController($scope, $stateParams, scopesWebApi, uiHelper, $translate) {
-
+    function ScopeDetailsController($scope, $stateParams, $translate, scopesWebApi, uiHelper, lookupContainer) {
         loadData();
+
+        $scope.scopeTypes = lookupContainer.getLookupList(lookupContainer.keys.scopeTypes);
 
         function loadData () {
             var scopeId = $stateParams.scopeId;
@@ -23,8 +25,16 @@
                     uiHelper.showErrorMessage(err, $translate.instant('SCOPES.ERRORS.COULD_NOT_LOAD_DETAILS', {
                         scopeId: scopeId
                     }));
-                })
+                });
         }
+
+        $scope.showScopeType = function() {
+            return $scope.scopeTypes[$scope.scope.type].value.text;
+        };
+
+        $scope.save = function () {
+            // TODO: Implement save function
+        };
 
     }
 

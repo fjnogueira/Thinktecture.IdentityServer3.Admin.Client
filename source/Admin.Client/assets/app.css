@@ -1,4 +1,10 @@
 .default-grid {
-    width: 100%;
-    height: 400px;
+  width: 100%;
+  height: 400px;
+}
+.scopeOverviewTable tr td:nth-child(1) {
+  width: 50%;
+}
+.scopeOverviewTable tr td:nth-child(2) {
+  width: 50%;
 }
