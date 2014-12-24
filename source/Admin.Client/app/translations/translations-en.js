@@ -30,6 +30,11 @@ window.thinktecture.translations.en = {
         "OVERVIEW": {
             "TITLE": "Scopes"
         },
+        "NEW": {
+            "TITLE": "Create a new scope",
+            "NOTICE": "Additional settings can be provided after creating a new scope.",
+            "SUCCESS": "Your new scope has been created."
+        },
         "DETAILS": {
             "TITLE": "Scope Details",
             "ALWAYS_INCLUDE_IN_ID_TOKEN": "Always Include In ID Token",
@@ -39,7 +44,8 @@ window.thinktecture.translations.en = {
         },
         "ERRORS": {
             "COULD_NOT_LOAD_DETAILS": "Details could not be loaded for scope with ID “{{scopeId}}”.",
-            "COULD_NOT_LOAD_OVERVIEW": "Scopes could not be loaded."
+            "COULD_NOT_LOAD_OVERVIEW": "Scopes could not be loaded.",
+            "COULD_NOT_CREATE_NEW_SCOPE": "New scope could not be created."
         }
     },
 
@@ -95,6 +101,10 @@ window.thinktecture.translations.en = {
             "YES": "Yes",
             "NO": "No"
         },
-        "NO_DATA": "No data"
+        "NO_DATA": "No data",
+        "NEW": "New",
+        "OK": "OK",
+        "CANCEL": "Cancel",
+        "PLEASE_SELECT": "Please select..."
     }
 };

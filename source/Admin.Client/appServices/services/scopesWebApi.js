@@ -22,12 +22,12 @@
             });
         };
 
-        this.add = function (client) {
-            return webApi.performPutRequest('scope/add', client);
+        this.add = function (scope) {
+            return webApi.performPostRequest('scope/add', scope);
         };
 
-        this.update = function (client) {
-            return webApi.performPostRequest('scope/update', client);
+        this.update = function (scope) {
+            return webApi.performPutRequest('scope/update', scope);
         };
 
         this.remove = function (key) {

@@ -8,3 +8,6 @@
 .scopeOverviewTable tr td:nth-child(2) {
   width: 50%;
 }
+div .row-margin-bottom {
+  margin-bottom: 15px;
+}
