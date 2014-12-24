@@ -40,12 +40,14 @@ window.thinktecture.translations.en = {
             "ALWAYS_INCLUDE_IN_ID_TOKEN": "Always Include In ID Token",
             "NO_CLAIMS": "No claims are associated with this scope.",
             "SETTING": "Setting",
-            "VALUE": "Value"
+            "VALUE": "Value",
+            "UPDATE_SUCCESSFUL": "Scope has been updated successfully."
         },
         "ERRORS": {
             "COULD_NOT_LOAD_DETAILS": "Details could not be loaded for scope with ID “{{scopeId}}”.",
             "COULD_NOT_LOAD_OVERVIEW": "Scopes could not be loaded.",
-            "COULD_NOT_CREATE_NEW_SCOPE": "New scope could not be created."
+            "COULD_NOT_CREATE_NEW_SCOPE": "New scope could not be created.",
+            "COULD_NOT_UPDATE_SCOPE": "Scope could not be updated."
         }
     },
 

@@ -33,7 +33,12 @@
         };
 
         $scope.save = function () {
-            // TODO: Implement save function
+            scopesWebApi.update($scope.scope)
+                .then (function () {
+                uiHelper.success($translate.instant('SCOPES.DETAILS.UPDATE_SUCCESSFUL'));
+            }, function (err) {
+                uiHelper.showErrorMessage(err, $translate.instant('SCOPES.ERRORS.COULD_NOT_BE_UPDATED'));
+            });
         };
 
     }

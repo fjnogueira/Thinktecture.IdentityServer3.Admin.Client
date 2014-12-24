@@ -34,12 +34,12 @@
     </tr>
     <tr>
         <td>{{ 'SCOPES.COMMON.CLAIMS_RULE' | translate }}</td>
-        <td><a href="#" editable-text="scope.claimsRule" onaftersave="save">{{ scope.claimsRule || 'COMMON.EMPTY_FIELD' | translate }}</a></td>
+        <td><a href="#" editable-text="scope.claimsRule" onaftersave="save()">{{ scope.claimsRule || 'COMMON.EMPTY_FIELD' | translate }}</a></td>
     </tr>
     <tr>
         <td>{{ 'SCOPES.COMMON.REQUIRED' | translate }}</td>
         <td>
-            <yes-no-toggle ng-model="scope.required"></yes-no-toggle>
+            <yes-no-toggle toggle="save()" ng-model="scope.required"></yes-no-toggle>
         </td>
     </tr>
     <tr>
