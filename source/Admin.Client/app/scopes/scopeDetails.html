@@ -26,7 +26,7 @@
     </tr>
     <tr>
         <td>{{ 'SCOPES.COMMON.DESCRIPTION' | translate }}</td>
-        <td><a href="#" editable-text="scope.description" onaftersave="save()">{{ scope.description }}</a></td>
+        <td><a href="#" editable-text="scope.description" onaftersave="save()">{{ scope.description || 'COMMON.EMPTY_FIELD' | translate }}</a></td>
     </tr>
     <tr>
         <td>{{ 'SCOPES.COMMON.TYPE' | translate }}</td>
@@ -34,7 +34,7 @@
     </tr>
     <tr>
         <td>{{ 'SCOPES.COMMON.CLAIMS_RULE' | translate }}</td>
-        <td>{{ scope.claimsRule }}</td>
+        <td><a href="#" editable-text="scope.claimsRule" onaftersave="save">{{ scope.claimsRule || 'COMMON.EMPTY_FIELD' | translate }}</a></td>
     </tr>
     <tr>
         <td>{{ 'SCOPES.COMMON.REQUIRED' | translate }}</td>

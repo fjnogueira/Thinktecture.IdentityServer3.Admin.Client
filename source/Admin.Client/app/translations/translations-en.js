@@ -105,6 +105,7 @@ window.thinktecture.translations.en = {
         "NEW": "New",
         "OK": "OK",
         "CANCEL": "Cancel",
-        "PLEASE_SELECT": "Please select..."
+        "PLEASE_SELECT": "Please select...",
+        "EMPTY_FIELD": "empty"
     }
 };
