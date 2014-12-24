@@ -5,12 +5,14 @@
      * @constructor
      * @param $scope
      * @param $translate
+     * @param $state
      * @param $stateParams
      * @param {ScopesWebApi} scopesWebApi
      * @param {UiHelper} uiHelper
      * @param {LookupContainer} lookupContainer
+     * @param {ConfirmDialog} confirmDialog
      */
-    function ScopeDetailsController($scope, $stateParams, $translate, scopesWebApi, uiHelper, lookupContainer) {
+    function ScopeDetailsController($scope, $state, $stateParams, $translate, scopesWebApi, uiHelper, lookupContainer, confirmDialog) {
         loadData();
 
         $scope.scopeTypes = lookupContainer.getLookupList(lookupContainer.keys.scopeTypes);
@@ -37,10 +39,23 @@
                 .then (function () {
                 uiHelper.success($translate.instant('SCOPES.DETAILS.UPDATE_SUCCESSFUL'));
             }, function (err) {
-                uiHelper.showErrorMessage(err, $translate.instant('SCOPES.ERRORS.COULD_NOT_BE_UPDATED'));
+                uiHelper.showErrorMessage(err, $translate.instant('SCOPES.ERRORS.COULD_NOT_UPDATE'));
             });
         };
 
+        $scope.delete = function () {
+            confirmDialog.confirmTranslated('SCOPES.OVERVIEW.CONFIRM_DELETE')
+                .then(function () {
+                    return scopesWebApi.remove($scope.scope.id);
+                })
+                .then(function () {
+                    $state.go('^');
+                }, function (err) {
+                    if (angular.isDefined(err)) {
+                        uiHelper.showErrorMessage(err, $translate.instant('SCOPES.ERRORS.COULD_NOT_DELETE'));
+                    }
+                });
+        }
     }
 
     app.module.controller('scopeDetailsController', ScopeDetailsController);

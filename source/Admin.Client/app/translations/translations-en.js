@@ -28,7 +28,8 @@ window.thinktecture.translations.en = {
             "SHOW_IN_DISCOVERY_DOCUMENT": "Show In Discovery Document"
         },
         "OVERVIEW": {
-            "TITLE": "Scopes"
+            "TITLE": "Scopes",
+            "CONFIRM_DELETE": "Do you really want to delete this scope?"
         },
         "NEW": {
             "TITLE": "Create a new scope",
@@ -47,7 +48,8 @@ window.thinktecture.translations.en = {
             "COULD_NOT_LOAD_DETAILS": "Details could not be loaded for scope with ID “{{scopeId}}”.",
             "COULD_NOT_LOAD_OVERVIEW": "Scopes could not be loaded.",
             "COULD_NOT_CREATE_NEW_SCOPE": "New scope could not be created.",
-            "COULD_NOT_UPDATE_SCOPE": "Scope could not be updated."
+            "COULD_NOT_UPDATE": "Scope could not be updated.",
+            "COULD_NOT_DELETE": "Scope could not be deleted."
         }
     },
 
@@ -107,7 +109,9 @@ window.thinktecture.translations.en = {
         "NEW": "New",
         "OK": "OK",
         "CANCEL": "Cancel",
+        "DELETE": "Delete",
         "PLEASE_SELECT": "Please select...",
-        "EMPTY_FIELD": "empty"
+        "EMPTY_FIELD": "empty",
+        "PLEASE_CONFIRM": "Please confirm"
     }
 };

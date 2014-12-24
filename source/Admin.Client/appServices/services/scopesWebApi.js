@@ -31,7 +31,9 @@
         };
 
         this.remove = function (key) {
-            return webApi.performDeleteRequest('scope/delete', key);
+            return webApi.performDeleteRequest('scope/delete', {
+                key: key
+            });
         };
 
     }
