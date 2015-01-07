@@ -44,6 +44,7 @@
             modal.result
                 .then(function () {
                     uiHelper.success($translate.instant('SCOPES.NEW.SUCCESS'));
+                    refresh();
                 }, function (err) {
                     if (err) {
                         uiHelper.showErrorMessage(err, $translate.instant('SCOPES.ERRORS.COULD_NOT_CREATE_NEW_SCOPE'))
