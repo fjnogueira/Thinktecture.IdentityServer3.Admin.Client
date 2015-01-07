@@ -20,7 +20,7 @@
 
         $templateCache.put(templateFileNames.scope,
             '<div class="ui-grid-cell-contents">' +
-            '<a ui-sref="scopes.details({ scopeId: row.entity.id })">{{COL_FIELD}}</a>' +
+            '<a ui-sref="scopes.details({ scopeId: row.entity.id })"><i class="fa" ng-class="{\'fa-user\': row.entity.type === 0, \'fa-cog\': row.entity.type === 1}"></i> {{COL_FIELD}}</a>' +
             '</div>'
         );
 
