@@ -112,6 +112,12 @@ window.thinktecture.translations.en = {
         "DELETE": "Delete",
         "PLEASE_SELECT": "Please select...",
         "EMPTY_FIELD": "empty",
-        "PLEASE_CONFIRM": "Please confirm"
+        "PLEASE_CONFIRM": "Please confirm",
+        "PAGING": {
+            "PREVIOUS": "‹",
+            "NEXT": "›",
+            "FIRST": "«",
+            "LAST": "»"
+        }
     }
 };
