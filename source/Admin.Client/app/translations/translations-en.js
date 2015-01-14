@@ -36,6 +36,9 @@ window.thinktecture.translations.en = {
             "NOTICE": "Additional settings can be provided after creating a new scope.",
             "SUCCESS": "Your new scope has been created."
         },
+        "NEW_SCOPE_CLAIM": {
+            "TITLE": 'Create a new scope claim'
+        },
         "DETAILS": {
             "TITLE": "Scope Details",
             "ALWAYS_INCLUDE_IN_ID_TOKEN": "Always Include In ID Token",

@@ -69,24 +69,33 @@
 </table>
 
 <h2 translate>SCOPES.COMMON.CLAIMS</h2>
+<div class="row">
+    <div class="col-md-12">
+        <button class="btn btn-success" ng-click="newScopeClaim()"><i class="fa fa-plus"></i> <span translate>COMMON.NEW</span></button>
+    </div>
+</div>
 <table class="table table-striped">
     <thead>
     <tr>
         <th>{{ 'SCOPES.COMMON.NAME' | translate }}</th>
         <th>{{ 'SCOPES.COMMON.DESCRIPTION' | translate }}</th>
         <th>{{ 'SCOPES.DETAILS.ALWAYS_INCLUDE_IN_ID_TOKEN' | translate }}</th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
     <tr ng-repeat="claim in scope.scopeClaims">
-        <td>{{ claim.name }}</td>
-        <td>{{ claim.description }}</td>
+        <td><a href="#" editable-text="claim.name" onaftersave="save()">{{ claim.name }}</a></td>
+        <td><a href="#" editable-text="claim.description" onaftersave="save()">{{ claim.description }}</a></td>
         <td>
-            <yes-no-toggle ng-model="claim.alwaysIncludeInIdToken"></yes-no-toggle>
+            <yes-no-toggle ng-model="claim.alwaysIncludeInIdToken" toggle="save()" ></yes-no-toggle>
+        </td>
+        <td>
+            <button ng-click="removeScopeClaim($index)"><i class="fa fa-trash"></i></button>
         </td>
     </tr>
-    <tr ng-hide="scope.Claims">
-        <td colspan="3" class="text-center">{{ 'SCOPES.DETAILS.NO_CLAIMS' | translate }}</td>
+    <tr ng-show="scope.scopeClaims.length === 0">
+        <td colspan="4" class="text-center">{{ 'SCOPES.DETAILS.NO_CLAIMS' | translate }}</td>
     </tr>
     </tbody>
 </table>

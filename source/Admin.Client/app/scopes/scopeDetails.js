@@ -7,17 +7,18 @@
      * @param $translate
      * @param $state
      * @param $stateParams
+     * @param $modal
      * @param {ScopesWebApi} scopesWebApi
      * @param {UiHelper} uiHelper
      * @param {LookupContainer} lookupContainer
      * @param {ConfirmDialog} confirmDialog
      */
-    function ScopeDetailsController($scope, $state, $stateParams, $translate, scopesWebApi, uiHelper, lookupContainer, confirmDialog) {
+    function ScopeDetailsController($scope, $state, $stateParams, $translate, $modal, scopesWebApi, uiHelper, lookupContainer, confirmDialog) {
         loadData();
 
         $scope.scopeTypes = lookupContainer.getLookupList(lookupContainer.keys.scopeTypes);
 
-        function loadData () {
+        function loadData() {
             var scopeId = $stateParams.scopeId;
 
             scopesWebApi.get(scopeId)
@@ -30,18 +31,20 @@
                 });
         }
 
-        $scope.showScopeType = function() {
+        $scope.showScopeType = function () {
             return $scope.scopeTypes[$scope.scope.type].value.text;
         };
 
-        $scope.save = function () {
+        function save() {
             scopesWebApi.update($scope.scope)
-                .then (function () {
-                uiHelper.success($translate.instant('SCOPES.DETAILS.UPDATE_SUCCESSFUL'));
-            }, function (err) {
-                uiHelper.showErrorMessage(err, $translate.instant('SCOPES.ERRORS.COULD_NOT_UPDATE'));
-            });
-        };
+                .then(function () {
+                    uiHelper.success($translate.instant('SCOPES.DETAILS.UPDATE_SUCCESSFUL'));
+                }, function (err) {
+                    uiHelper.showErrorMessage(err, $translate.instant('SCOPES.ERRORS.COULD_NOT_UPDATE'));
+                });
+        }
+
+        $scope.save = save;
 
         $scope.delete = function () {
             confirmDialog.confirmTranslated('SCOPES.OVERVIEW.CONFIRM_DELETE')
@@ -55,6 +58,24 @@
                         uiHelper.showErrorMessage(err, $translate.instant('SCOPES.ERRORS.COULD_NOT_DELETE'));
                     }
                 });
+        };
+
+        $scope.newScopeClaim = function () {
+            var modal = $modal.open({
+                templateUrl: 'app/scopes/newScopeClaim.html',
+                controller: 'newScopeClaimController'
+            });
+
+            modal.result
+                .then(function (scopeClaim) {
+                    $scope.scope.scopeClaims.push(scopeClaim);
+                    save();
+                });
+        };
+
+        $scope.removeScopeClaim = function (index) {
+            $scope.scope.scopeClaims.splice(index, 1);
+            save();
         }
     }
 
