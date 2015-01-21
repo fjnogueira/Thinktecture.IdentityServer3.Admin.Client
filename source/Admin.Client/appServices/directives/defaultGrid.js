@@ -33,6 +33,7 @@
                 scope.refresh = refresh;
 
                 scope.gridOptions = {
+                    enableColumnMenus: false,
                     useExternalSorting: true,
                     columnDefs: scope.columns,
                     minRowsToShow: scope.paging.itemsPerPage
