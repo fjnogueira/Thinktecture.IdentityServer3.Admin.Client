@@ -11,32 +11,17 @@
      * @param {UiHelper} uiHelper
      */
     function ScopeOverviewController($scope, $modal, $translate, scopesWebApi, cellTemplate, uiHelper) {
-        $scope.paging = {
-            itemsPerPage: 10,
-            currentPage: 1,
-            totalItems: 0
-        };
+        $scope.columns = [
+            {field: 'displayName', cellTemplate: cellTemplate.templates.scope},
+            {field: 'description'},
+            {field: 'required', cellTemplate: cellTemplate.templates.bool},
+            {field: 'enabled', cellTemplate: cellTemplate.templates.bool}
+        ];
 
-        $scope.gridOptions = {
-            columnDefs: [
-                {field: 'displayName', cellTemplate: cellTemplate.templates.scope},
-                {field: 'description'},
-                {field: 'required', cellTemplate: cellTemplate.templates.bool},
-                {field: 'enabled', cellTemplate: cellTemplate.templates.bool}
-            ],
-            minRowsToShow: $scope.paging.itemsPerPage
-        };
-
-        $scope.model = {
-            toggle: true
-        };
-
-        var refresh = function () {
-            return scopesWebApi.list(($scope.paging.currentPage - 1) * $scope.paging.itemsPerPage, $scope.paging.itemsPerPage, null, null)
+        var refresh = function (pagingInformation) {
+            return scopesWebApi.list((pagingInformation.currentPage - 1) * pagingInformation.itemsPerPage, pagingInformation.itemsPerPage, null, null)
                 .then(function (data) {
-                    $scope.gridOptions.data = data.items;
-
-                    $scope.paging.totalItems = data.totalCount;
+                    return data;
                 }, function (err) {
                     uiHelper.showErrorMessage(err, $translate.instant('SCOPES.ERRORS.COULD_NOT_LOAD_OVERVIEW'))
                 });
@@ -61,8 +46,6 @@
         };
 
         $scope.refresh = refresh;
-
-        refresh();
     }
 
     app.module.controller('scopeOverviewController', ScopeOverviewController);
