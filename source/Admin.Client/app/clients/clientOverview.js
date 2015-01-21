@@ -10,30 +10,23 @@
      * @param $translate
      */
     function ClientOverviewController($scope, clientsWebApi, cellTemplate, uiHelper, $translate) {
+        $scope.columns = [
+            {field: 'clientId', cellTemplate: cellTemplate.templates.client},
+            {field: 'clientName'},
+            {field: 'clientUri'},
+            {field: 'enabled', cellTemplate: cellTemplate.templates.bool}
+        ];
 
-        $scope.gridOptions = {
-            columnDefs: [
-                { field: 'clientId', cellTemplate: cellTemplate.templates.client },
-                { field: 'clientName' },
-                { field: 'clientUri' },
-                { field: 'enabled', cellTemplate: cellTemplate.templates.bool }
-            ]
-        };
-
-        $scope.model = {
-            toggle: true
-        };
-
-        var refresh = function () {
-            return clientsWebApi.list(0, 10, null, null)
+        var refresh = function (pagingInformation) {
+            return clientsWebApi.list((pagingInformation.currentPage - 1) * pagingInformation.itemsPerPage, pagingInformation.itemsPerPage, null, null)
                 .then(function (data) {
-                    $scope.gridOptions.data = data.items;
+                    return data;
                 }, function (err) {
                     uiHelper.showErrorMessage(err, $translate.instant('CLIENTS.ERRORS.COULD_NOT_LOAD_OVERVIEW'))
                 });
         };
 
-        refresh();
+        $scope.refresh = refresh;
     }
 
     app.module.controller('clientOverviewController', ClientOverviewController);
