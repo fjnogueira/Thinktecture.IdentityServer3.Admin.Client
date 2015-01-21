@@ -22,6 +22,7 @@
 <div>
     <navbar></navbar>
     <div class="container" ui-view="content"></div>
+    <footer-nav></footer-nav>
 </div>
 
 {{bundler.renderScripts("~/libs")}}

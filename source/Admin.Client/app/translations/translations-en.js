@@ -10,7 +10,8 @@ window.thinktecture.translations.en = {
     },
 
     "START": {
-        "TITLE": "It works!"
+        "TITLE": "Thinktecture IdentityServer v3 Admin UI",
+        "WELCOME_INFORMATION": "Welcome to Thinktecture IdentityServer v3 Admin UI! Please use the menu at the top of the page to go to the specific settings."
     },
 
     "SCOPES": {
