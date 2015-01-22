@@ -87,6 +87,11 @@ window.thinktecture.translations.en = {
         "OVERVIEW": {
             "TITLE": "Clients"
         },
+        "NEW": {
+            "TITLE": "Create a new client",
+            "NOTICE": "Additional settings can be provided after creating a new client.",
+            "SUCCESS": "Your new client has been created."
+        },
         "DETAILS": {
             "TITLE": "Client Details",
             "SETTING": "Setting",
@@ -98,7 +103,8 @@ window.thinktecture.translations.en = {
         },
         "ERRORS": {
             "COULD_NOT_LOAD_DETAILS": "Details could not be loaded for client with ID “{{clientId}}”.",
-            "COULD_NOT_LOAD_OVERVIEW": "Clients could not be loaded."
+            "COULD_NOT_LOAD_OVERVIEW": "Clients could not be loaded.",
+            "COULD_NOT_CREATE_NEW_CLIENT": "New client could not be created."
         }
     },
 

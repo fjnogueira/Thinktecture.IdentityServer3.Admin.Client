@@ -1,15 +1,16 @@
 (function ($, jQuery) {
-    "use strict";
 
     /**
      * @constructor
      * @param $scope
+     * @param $translate
+     * @param $modal
      * @param {ClientsWebApi} clientsWebApi
      * @param {CellTemplate} cellTemplate
      * @param {UiHelper} uiHelper
-     * @param $translate
      */
-    function ClientOverviewController($scope, clientsWebApi, cellTemplate, uiHelper, $translate) {
+    "use strict";
+    function ClientOverviewController($scope, $translate, $modal, clientsWebApi, cellTemplate, uiHelper) {
         $scope.columns = [
             {field: 'clientId', cellTemplate: cellTemplate.templates.client},
             {field: 'clientName'},
@@ -23,6 +24,24 @@
                     return data;
                 }, function (err) {
                     uiHelper.showErrorMessage(err, $translate.instant('CLIENTS.ERRORS.COULD_NOT_LOAD_OVERVIEW'))
+                });
+        };
+
+        $scope.newClient = function () {
+            var modal = $modal.open({
+                templateUrl: 'app/clients/newClient.html',
+                controller: 'newClientController',
+                backdrop: 'static'
+            });
+
+            modal.result
+                .then(function () {
+                    uiHelper.success($translate.instant('CLIENTS.NEW.SUCCESS'));
+                    // ToDo: Refresh
+                }, function (err) {
+                    if (err) {
+                        uiHelper.showErrorMessage(err, $translate.instant('CLIENTS.ERRORS.COULD_NOT_CREATE_NEW_CLIENT'))
+                    }
                 });
         };
 
