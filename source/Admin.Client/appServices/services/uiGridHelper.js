@@ -14,7 +14,7 @@
 
             angular.forEach(sortColumns, function (sortColumn) {
                 result.push({
-                    name: sortColumn.displayName,
+                    name: sortColumn.field,
                     uiGridSortDirection: sortColumn.sort.direction
                 });
             });
