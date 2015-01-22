@@ -1,7 +1,7 @@
 (function ($, jQuery) {
     "use strict";
 
-    app.module.directive('defaultGrid', function () {
+    app.module.directive('defaultGrid', function (uiGridHelper) {
         return {
             restrict: 'E',
             scope: {
@@ -36,7 +36,14 @@
                     enableColumnMenus: false,
                     useExternalSorting: true,
                     columnDefs: scope.columns,
-                    minRowsToShow: scope.paging.itemsPerPage
+                    minRowsToShow: scope.paging.itemsPerPage,
+                    onRegisterApi: function (gridApi) {
+                        scope.gridApi = gridApi;
+                        scope.gridApi.core.on.sortChanged(scope, function (grid, sortColumns) {
+                            scope.paging.sortColumns = uiGridHelper.createSortInformation(sortColumns);
+                            refresh();
+                        });
+                    }
                 };
 
                 refresh();

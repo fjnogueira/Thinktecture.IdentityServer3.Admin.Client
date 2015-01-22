@@ -19,7 +19,7 @@
         ];
 
         var refresh = function (pagingInformation) {
-            return scopesWebApi.list((pagingInformation.currentPage - 1) * pagingInformation.itemsPerPage, pagingInformation.itemsPerPage, null, null)
+            return scopesWebApi.list((pagingInformation.currentPage - 1) * pagingInformation.itemsPerPage, pagingInformation.itemsPerPage, null, pagingInformation.sortColumns)
                 .then(function (data) {
                     return data;
                 }, function (err) {
