@@ -19,6 +19,10 @@ div .row-margin-bottom {
 body {
   margin-bottom: 60px;
 }
+html {
+  position: relative;
+  min-height: 100%;
+}
 .footer {
   position: absolute;
   bottom: 0;
