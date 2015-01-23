@@ -12,7 +12,7 @@
             templateUrl: 'appServices/directives/yesNoToggle.html',
             link: function (scope) {
                 scope.$watch('ngModel', function (newVal, oldVal) {
-                    if (newVal !== oldVal && angular.isDefined(scope.toggle)) {
+                    if (angular.isDefined(oldVal) && newVal !== oldVal && angular.isDefined(scope.toggle)) {
                         scope.toggle();
                     }
                 });
