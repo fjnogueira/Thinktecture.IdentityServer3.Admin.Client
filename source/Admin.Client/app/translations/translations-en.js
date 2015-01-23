@@ -2,7 +2,7 @@
 window.thinktecture.translations = {};
 
 window.thinktecture.translations.en = {
-    'APP_TITLE': 'Thinktecture IdentityServer v3 Admin',
+    'APP_TITLE': 'Thinktecture IdentityServer3 Admin',
 
     'MENU': {
         'SCOPES': 'Scopes',
@@ -10,8 +10,8 @@ window.thinktecture.translations.en = {
     },
 
     'START': {
-        'TITLE': 'Thinktecture IdentityServer v3 Admin UI',
-        'WELCOME_INFORMATION': 'Welcome to Thinktecture IdentityServer v3 Admin UI! Please use the menu at the top of the page to go to the specific settings.'
+        'TITLE': 'Thinktecture IdentityServer3 Admin UI',
+        'WELCOME_INFORMATION': 'Welcome to Thinktecture IdentityServer3 Admin UI! Please use the menu at the top of the page to go to the specific settings.'
     },
 
     'SCOPES': {
