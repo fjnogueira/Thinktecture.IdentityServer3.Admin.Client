@@ -8,7 +8,11 @@
         var data = {};
 
         this.keys = {
-            scopeTypes: 'scopeTypes'
+            scopeTypes: 'scopeTypes',
+            flows: 'flows',
+            tokenUsage: 'tokenUsage',
+            tokenExpiration: 'tokenExpiration',
+            accessTokenType: 'accessTokenType'
         };
 
         /**

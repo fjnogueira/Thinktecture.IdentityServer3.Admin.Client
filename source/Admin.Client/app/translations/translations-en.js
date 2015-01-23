@@ -82,7 +82,11 @@ window.thinktecture.translations.en = {
             'ACCESS_TOKEN_TYPE': 'Access Token Type',
             'ALLOW_LOCAL_LOGIN': 'Allow Local Login',
             'IDENTITY_PROVIDER_RESTRICTIONS': 'Identity Provider Restrictions',
-            'INCLUDE_JWT_ID': 'Include JWT ID'
+            'INCLUDE_JWT_ID': 'Include JWT ID',
+            'CLAIMS': 'Client claims',
+            'CUSTOM_GRANT_TYPE_RESTRICTIONS': 'Custom grant type restrictions',
+            'PREFIX_CLIENT_CLAIMS': 'Prefix client claims',
+            'ALWAYS_SEND_CLIENT_CLAIMS': 'Always send client claims'
         },
         'OVERVIEW': {
             'TITLE': 'Clients'
@@ -99,12 +103,16 @@ window.thinktecture.translations.en = {
             'NO_REDIRECT_URIS': 'No redirect URIs are associated with this client.',
             'NO_POST_LOGOUT_REDIRECT_URIS': 'No POST logout redirect URIs are associated with this client.',
             'NO_SCOPE_RESTRICTIONS': 'No scope restrictions are associated with this client.',
-            'NO_IDENTITY_PROVIDER_RESTRICTIONS': 'No identity provider restrictions are associated with this client.'
+            'NO_IDENTITY_PROVIDER_RESTRICTIONS': 'No identity provider restrictions are associated with this client.',
+            'UPDATE_SUCCESSFUL': 'Client has been updated successfully.',
+            'NO_CLAIMS': 'No client claims are associated with this client.',
+            'NO_CUSTOM_GRANT_TYPE_RESTRICTIONS': 'No custom grant type restrictions are associated with this client.'
         },
         'ERRORS': {
             'COULD_NOT_LOAD_DETAILS': 'Details could not be loaded for client with ID “{{clientId}}”.',
             'COULD_NOT_LOAD_OVERVIEW': 'Clients could not be loaded.',
-            'COULD_NOT_CREATE_NEW_CLIENT': 'New client could not be created.'
+            'COULD_NOT_CREATE_NEW_CLIENT': 'New client could not be created.',
+            'COULD_NOT_UPDATE': 'Client could not be updated.'
         }
     },
 

@@ -12,71 +12,71 @@
 <tbody>
 <tr>
     <td>{{ 'CLIENTS.COMMON.ENABLED' | translate }}</td>
-    <td><on-off-toggle ng-model="client.enabled"></on-off-toggle></td>
+    <td><on-off-toggle toggle="save()" ng-model="client.enabled"></on-off-toggle></td>
 </tr>
 <tr>
     <td>{{ 'CLIENTS.COMMON.CLIENT_ID' | translate }}</td>
-    <td>{{ client.clientId }}</td>
+    <td><a href="#" editable-text="client.clientId" onaftersave="save()">{{ client.clientId }}</a></td>
 </tr>
 <tr>
     <td>{{ 'CLIENTS.COMMON.CLIENT_SECRET' | translate }}</td>
-    <td>{{ client.clientSecret }}</td>
+    <td><a href="#" editable-text="client.clienSecret" onaftersave="save()">{{ client.clientSecret || 'COMMON.EMPTY_FIELD' | translate }}</a></td>
 </tr>
 <tr>
     <td>{{ 'CLIENTS.COMMON.CLIENT_NAME' | translate }}</td>
-    <td>{{ client.clientName }}</td>
+    <td><a href="#" editable-text="client.clientName" onaftersave="save()">{{ client.clientName }}</a></td>
+</tr>
+<tr>
+    <td>{{ 'CLIENTS.COMMON.FLOW' | translate }}</td>
+    <td><a href="#" editable-select="client.flow" e-ng-options="item.value.enumValue as item.value.text for item in flows" onaftersave="save()">{{ showFlows() }}</a></td>
 </tr>
 <tr>
     <td>{{ 'CLIENTS.COMMON.CLIENT_URI' | translate }}</td>
-    <td>{{ client.clientUri }}</td>
+    <td><a href="#" editable-text="client.clientUri" onaftersave="save()">{{ client.clientUri || 'COMMON.EMPTY_FIELD' | translate }}</a></td>
 </tr>
 <tr>
     <td>{{ 'CLIENTS.COMMON.LOGO_URI' | translate }}</td>
-    <td>{{ client.logoUri }}</td>
+    <td><a href="#" editable-text="client.logoUri" onaftersave="save()">{{ client.logoUri || 'COMMON.EMPTY_FIELD' | translate }}</a></td>
 </tr>
 <tr>
     <td>{{ 'CLIENTS.COMMON.REQUIRE_CONSENT' | translate }}</td>
-    <td><yes-no-toggle ng-model="client.requireConsent"></yes-no-toggle></td>
+    <td><yes-no-toggle toggle="save()" ng-model="client.requireConsent"></yes-no-toggle></td>
 </tr>
 <tr>
     <td>{{ 'CLIENTS.COMMON.ALLOW_REMEMBER_CONSENT' | translate }}</td>
-    <td><yes-no-toggle ng-model="client.allowRememberConsent"></yes-no-toggle></td>
+    <td><yes-no-toggle toggle="save()" ng-model="client.allowRememberConsent"></yes-no-toggle></td>
 </tr>
 <tr>
     <td>{{ 'CLIENTS.COMMON.IDENTITY_TOKEN_LIFETIME' | translate }}</td>
-    <td>{{ client.identityTokenLifetime }}</td>
+    <td><a href="#" editable-number="client.identityTokenLifetime" onaftersave="save()">{{ client.identityTokenLifetime }}</a></td>
 </tr>
 <tr>
     <td>{{ 'CLIENTS.COMMON.ACCESS_TOKEN_LIFETIME' | translate }}</td>
-    <td>{{ client.accessTokenLifetime }}</td>
+    <td><a href="#" editable-number="client.accessTokenLifetime" onaftersave="save()">{{ client.accessTokenLifetime }}</a></td>
 </tr>
 <tr>
     <td>{{ 'CLIENTS.COMMON.AUTHORIZATION_CODE_LIFETIME' | translate }}</td>
-    <td>{{ client.authorizationCodeLifetime }}</td>
+    <td><a href="#" editable-number="client.authorizationCodeLifetime" onaftersave="save()">{{ client.authorizationCodeLifetime }}</a></td>
 </tr>
 <tr>
     <td>{{ 'CLIENTS.COMMON.ABSOLUTE_REFRESH_TOKEN_LIFETIME' | translate }}</td>
-    <td>{{ client.absoluteRefreshTokenLifetime }}</td>
+    <td><a href="#" editable-number="client.absoluteRefreshTokenLifetime" onaftersave="save()">{{ client.absoluteRefreshTokenLifetime }}</a></td>
 </tr>
 <tr>
     <td>{{ 'CLIENTS.COMMON.SLIDING_REFRESH_TOKEN_LIFETIME' | translate }}</td>
-    <td>{{ client.slidingRefreshTokenLifetime }}</td>
+    <td><a href="#" editable-number="client.slidingRefreshTokenLifetime" onaftersave="save()">{{ client.slidingRefreshTokenLifetime }}</a></td>
 </tr>
 <tr>
     <td>{{ 'CLIENTS.COMMON.REFRESH_TOKEN_USAGE' | translate }}</td>
-    <td>{{ client.refreshTokenUsage }}</td>
+    <td><a href="#" editable-select="client.refreshTokenUsage" e-ng-options="item.value.enumValue as item.value.text for item in tokenUsage" onaftersave="save()">{{ showTokenUsage() }}</a></td>
 </tr>
 <tr>
     <td>{{ 'CLIENTS.COMMON.REFRESH_TOKEN_EXPIRATION' | translate }}</td>
-    <td>{{ client.refreshTokenExpiration }}</td>
-</tr>
-<tr>
-    <td>{{ 'CLIENTS.COMMON.IDENTITY_TOKEN_SIGNING_KEY_TYPE' | translate }}</td>
-    <td>{{ client.identityTokenSigningKeyType }}</td>
+    <td><a href="#" editable-select="client.refreshTokenExpiration" e-ng-options="item.value.enumValue as item.value.text for item in tokenExpiration" onaftersave="save()">{{ showTokenExpiration() }}</a></td>
 </tr>
 <tr>
     <td>{{ 'CLIENTS.COMMON.ACCESS_TOKEN_TYPE' | translate }}</td>
-    <td>{{ client.accessTokenType }}</td>
+    <td><a href="#" editable-select="client.accessTokenType" e-ng-options="item.value.enumValue as item.value.text for item in accessTokenType" onaftersave="save()">{{ showAccessTokenType() }}</a></td>
 </tr>
 <tr>
     <td>{{ 'CLIENTS.COMMON.ALLOW_LOCAL_LOGIN' | translate }}</td>
@@ -84,7 +84,21 @@
 </tr>
 <tr>
     <td>{{ 'CLIENTS.COMMON.INCLUDE_JWT_ID' | translate }}</td>
-    <td><yes-no-toggle ng-model="client.includeJwtId"></yes-no-toggle></td>
+    <td>
+        <yes-no-toggle ng-model="client.includeJwtId"></yes-no-toggle>
+    </td>
+</tr>
+<tr>
+    <td>{{ 'CLIENTS.COMMON.ALWAYS_SEND_CLIENT_CLAIMS' | translate }}</td>
+    <td>
+        <yes-no-toggle ng-model="client.alwaysSendClientClaims"></yes-no-toggle>
+    </td>
+</tr>
+<tr>
+    <td>{{ 'CLIENTS.COMMON.PREFIX_CLIENT_CLAIMS' | translate }}</td>
+    <td>
+        <yes-no-toggle ng-model="client.prefixClientClaims"></yes-no-toggle>
+    </td>
 </tr>
 </tbody>
 </table>
@@ -100,3 +114,9 @@
 
 <h2 translate>CLIENTS.COMMON.IDENTITY_PROVIDER_RESTRICTIONS</h2>
 <client-details-table no-data-translation-key="CLIENTS.DETAILS.NO_IDENTITY_PROVIDER_RESTRICTIONS" data="client.identityProviderRestrictions" property="provider"></client-details-table>
+
+<h2 translate>CLIENTS.COMMON.CLAIMS</h2>
+<client-details-table no-data-translation-key="CLIENTS.DETAILS.NO_CLAIMS" data="client.claims" property="type"></client-details-table>
+
+<h2 translate>CLIENTS.COMMON.CUSTOM_GRANT_TYPE_RESTRICTIONS</h2>
+<client-details-table no-data-translation-key="CLIENTS.DETAILS.NO_CUSTOM_GRANT_TYPE_RESTRICTIONS" data="client.customGrantTypeRestrictions" property="grantType"></client-details-table>
