@@ -52,7 +52,7 @@
         });
 
     app.module.constant('broadcastEvents', {
-        DATA_REFRESH: 'hideMenu'
+        DATA_REFRESH: 'dataRefresh'
     });
 
     /**
