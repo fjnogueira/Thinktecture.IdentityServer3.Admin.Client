@@ -30,7 +30,9 @@
         };
 
         this.remove = function (key) {
-            return webApi.performDeleteRequest('client/delete', key);
+            return webApi.performDeleteRequest('client/delete', {
+                key: key
+            });
         };
     }
 
