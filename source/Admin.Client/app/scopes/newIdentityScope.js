@@ -36,6 +36,28 @@
             }
         };
 
+        function createPayload() {
+            var payload = {};
+
+            payload.name = $scope.scope.name;
+            payload.displayName = $scope.scope.displayName;
+            payload.type = $scope.scope.type;
+
+            if ($scope.selectedOidcScope) {
+                payload.scopeClaims = [];
+
+                angular.forEach($scope.mappedClaims, function(item) {
+                    payload.scopeClaims.push({
+                        name: item.value,
+                        description: item.text,
+                        alwaysIncludeInIdToken: !!$scope.alwaysIncludeInIdToken
+                    })
+                });
+            }
+
+            return payload;
+        }
+
         $scope.cancel = function () {
             $modalInstance.dismiss();
         };
@@ -43,7 +65,9 @@
         $scope.ok = function () {
             spinnerService.startGlobalSpinner();
 
-            scopesWebApi.add($scope.scope)
+            var payload = createPayload();
+
+            scopesWebApi.add(payload)
                 .then(function () {
                     $modalInstance.close();
                 }, function (err) {
