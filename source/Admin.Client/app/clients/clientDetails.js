@@ -8,9 +8,11 @@
      * @param {ClientsWebApi} clientsWebApi
      * @param {UiHelper} uiHelper
      * @param {LookupContainer} lookupContainer
+     * @param {ConfirmDialog} confirmDialog
+     * @param {SpinnerService} spinnerService
      */
     "use strict";
-    function ClientDetailsController($scope, $stateParams, $translate, clientsWebApi, uiHelper, lookupContainer) {
+    function ClientDetailsController($scope, $stateParams, $translate, clientsWebApi, uiHelper, lookupContainer, confirmDialog, spinnerService) {
         loadData();
 
         $scope.flows = lookupContainer.getLookupList(lookupContainer.keys.flows);
@@ -35,6 +37,8 @@
         };
 
         function loadData () {
+            spinnerService.startGlobalSpinner();
+
             var clientId = $stateParams.clientId;
 
             clientsWebApi.get(clientId)
@@ -44,17 +48,43 @@
                     uiHelper.showErrorMessage(err, $translate.instant('CLIENTS.ERRORS.COULD_NOT_LOAD_DETAILS', {
                         clientId: clientId
                     }));
+                })
+                .finally(function () {
+                    spinnerService.stopGlobalSpinner();
                 });
         }
 
         function save() {
+            spinnerService.startGlobalSpinner();
+
             clientsWebApi.update($scope.client)
                 .then(function () {
                     uiHelper.success($translate.instant('CLIENTS.DETAILS.UPDATE_SUCCESSFUL'));
                 }, function (err) {
                     uiHelper.showErrorMessage(err, $translate.instant('CLIENTS.ERRORS.COULD_NOT_UPDATE'));
+                })
+                .finally(function () {
+                    spinnerService.stopGlobalSpinner();
                 });
         }
+
+        $scope.delete = function () {
+            confirmDialog.confirmTranslated('CLIENTS.OVERVIEW.CONFIRM_DELETE')
+                .then(function () {
+                    spinnerService.startGlobalSpinner();
+                    return clientsWebApi.remove($scope.client.id);
+                })
+                .then(function () {
+                    $state.go('^');
+                }, function (err) {
+                    if (angular.isDefined(err)) {
+                        uiHelper.showErrorMessage(err, $translate.instant('CLIENTS.ERRORS.COULD_NOT_DELETE'));
+                    }
+                })
+                .finally(function () {
+                    spinnerService.stopGlobalSpinner();
+                });
+        };
 
         $scope.save = save;
     }

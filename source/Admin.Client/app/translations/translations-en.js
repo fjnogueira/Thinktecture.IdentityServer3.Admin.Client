@@ -90,7 +90,8 @@ window.thinktecture.translations.en = {
             'ALWAYS_SEND_CLIENT_CLAIMS': 'Always send client claims'
         },
         'OVERVIEW': {
-            'TITLE': 'Clients'
+            'TITLE': 'Clients',
+            'CONFIRM_DELETE': 'Do you really want to delete this client?'
         },
         'NEW': {
             'TITLE': 'Create a new client',
@@ -113,7 +114,8 @@ window.thinktecture.translations.en = {
             'COULD_NOT_LOAD_DETAILS': 'Details could not be loaded for client with ID “{{clientId}}”.',
             'COULD_NOT_LOAD_OVERVIEW': 'Clients could not be loaded.',
             'COULD_NOT_CREATE_NEW_CLIENT': 'New client could not be created.',
-            'COULD_NOT_UPDATE': 'Client could not be updated.'
+            'COULD_NOT_UPDATE': 'Client could not be updated.',
+            'COULD_NOT_DELETE': 'Client could not be deleted.'
         }
     },
 

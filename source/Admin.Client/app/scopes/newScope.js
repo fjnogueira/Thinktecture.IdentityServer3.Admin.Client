@@ -6,9 +6,10 @@
      * @param $modalInstance
      * @param {LookupContainer} lookupContainer
      * @param {ScopesWebApi} scopesWebApi
+     * @param {SpinnerService} spinnerService
      * @constructor
      */
-    function NewScopeController($scope, $modalInstance, lookupContainer, scopesWebApi) {
+    function NewScopeController($scope, $modalInstance, lookupContainer, scopesWebApi, spinnerService) {
         $scope.scopeTypes = lookupContainer.getLookupList(lookupContainer.keys.scopeTypes);
         $scope.oidcScopes = lookupContainer.getLookupList(lookupContainer.keys.oidcScopes);
         $scope.scope = {};
@@ -29,11 +30,16 @@
         };
 
         $scope.ok = function () {
+            spinnerService.startGlobalSpinner();
+
             scopesWebApi.add($scope.scope)
                 .then(function () {
                     $modalInstance.close();
                 }, function (err) {
                     $modalInstance.dismiss(err);
+                })
+                .finally(function () {
+                    spinnerService.stopGlobalSpinner();
                 });
         };
     }

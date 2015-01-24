@@ -12,13 +12,15 @@
      * @param {UiHelper} uiHelper
      * @param {LookupContainer} lookupContainer
      * @param {ConfirmDialog} confirmDialog
+     * @param {SpinnerService} spinnerService
      */
-    function ScopeDetailsController($scope, $state, $stateParams, $translate, $modal, scopesWebApi, uiHelper, lookupContainer, confirmDialog) {
+    function ScopeDetailsController($scope, $state, $stateParams, $translate, $modal, scopesWebApi, uiHelper, lookupContainer, confirmDialog, spinnerService) {
         loadData();
 
         $scope.scopeTypes = lookupContainer.getLookupList(lookupContainer.keys.scopeTypes);
 
         function loadData() {
+            spinnerService.startGlobalSpinner();
             var scopeId = $stateParams.scopeId;
 
             scopesWebApi.get(scopeId)
@@ -28,6 +30,9 @@
                     uiHelper.showErrorMessage(err, $translate.instant('SCOPES.ERRORS.COULD_NOT_LOAD_DETAILS', {
                         scopeId: scopeId
                     }));
+                })
+                .finally(function () {
+                    spinnerService.stopGlobalSpinner();
                 });
         }
 
@@ -36,11 +41,16 @@
         };
 
         function save() {
+            spinnerService.startGlobalSpinner();
+
             scopesWebApi.update($scope.scope)
                 .then(function () {
                     uiHelper.success($translate.instant('SCOPES.DETAILS.UPDATE_SUCCESSFUL'));
                 }, function (err) {
                     uiHelper.showErrorMessage(err, $translate.instant('SCOPES.ERRORS.COULD_NOT_UPDATE'));
+                })
+                .finally(function () {
+                    spinnerService.stopGlobalSpinner();
                 });
         }
 
@@ -49,6 +59,7 @@
         $scope.delete = function () {
             confirmDialog.confirmTranslated('SCOPES.OVERVIEW.CONFIRM_DELETE')
                 .then(function () {
+                    spinnerService.startGlobalSpinner();
                     return scopesWebApi.remove($scope.scope.id);
                 })
                 .then(function () {
@@ -57,6 +68,9 @@
                     if (angular.isDefined(err)) {
                         uiHelper.showErrorMessage(err, $translate.instant('SCOPES.ERRORS.COULD_NOT_DELETE'));
                     }
+                })
+                .finally(function () {
+                    spinnerService.stopGlobalSpinner();
                 });
         };
 

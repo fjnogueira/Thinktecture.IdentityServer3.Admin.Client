@@ -8,9 +8,10 @@
      * @param {ClientsWebApi} clientsWebApi
      * @param {CellTemplate} cellTemplate
      * @param {UiHelper} uiHelper
+     * @param {SpinnerService} spinnerService
      */
     "use strict";
-    function ClientOverviewController($scope, $translate, $modal, clientsWebApi, cellTemplate, uiHelper) {
+    function ClientOverviewController($scope, $translate, $modal, clientsWebApi, cellTemplate, uiHelper, spinnerService) {
         $scope.columns = [
             {field: 'clientId', cellTemplate: cellTemplate.templates.client},
             {field: 'clientName'},
@@ -19,11 +20,16 @@
         ];
 
         var refresh = function (pagingInformation) {
+            spinnerService.startGlobalSpinner();
+
             return clientsWebApi.list((pagingInformation.currentPage - 1) * pagingInformation.itemsPerPage, pagingInformation.itemsPerPage, null, null)
                 .then(function (data) {
                     return data;
                 }, function (err) {
                     uiHelper.showErrorMessage(err, $translate.instant('CLIENTS.ERRORS.COULD_NOT_LOAD_OVERVIEW'))
+                })
+                .finally(function () {
+                    spinnerService.stopGlobalSpinner();
                 });
         };
 

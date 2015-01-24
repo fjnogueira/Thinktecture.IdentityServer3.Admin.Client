@@ -9,8 +9,9 @@
      * @param {ScopesWebApi} scopesWebApi
      * @param {CellTemplate} cellTemplate
      * @param {UiHelper} uiHelper
+     * @param {SpinnerService} spinnerService
      */
-    function ScopeOverviewController($scope, $modal, $translate, scopesWebApi, cellTemplate, uiHelper) {
+    function ScopeOverviewController($scope, $modal, $translate, scopesWebApi, cellTemplate, uiHelper, spinnerService) {
         $scope.columns = [
             {field: 'displayName', cellTemplate: cellTemplate.templates.scope},
             {field: 'description'},
@@ -19,11 +20,16 @@
         ];
 
         var refresh = function (pagingInformation) {
+            spinnerService.startGlobalSpinner();
+
             return scopesWebApi.list((pagingInformation.currentPage - 1) * pagingInformation.itemsPerPage, pagingInformation.itemsPerPage, null, pagingInformation.sortColumns)
                 .then(function (data) {
                     return data;
                 }, function (err) {
                     uiHelper.showErrorMessage(err, $translate.instant('SCOPES.ERRORS.COULD_NOT_LOAD_OVERVIEW'))
+                })
+                .finally(function () {
+                    spinnerService.stopGlobalSpinner();
                 });
         };
 
