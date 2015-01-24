@@ -24,7 +24,7 @@
         var refresh = function (pagingInformation) {
             spinnerService.startGlobalSpinner();
 
-            return clientsWebApi.list((pagingInformation.currentPage - 1) * pagingInformation.itemsPerPage, pagingInformation.itemsPerPage, null, null)
+            return clientsWebApi.list((pagingInformation.currentPage - 1) * pagingInformation.itemsPerPage, pagingInformation.itemsPerPage, null, pagingInformation.sortColumns)
                 .then(function (data) {
                     return data;
                 }, function (err) {
