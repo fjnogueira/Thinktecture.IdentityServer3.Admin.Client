@@ -30,7 +30,8 @@ window.thinktecture.translations.en = {
         },
         'OVERVIEW': {
             'TITLE': 'Scopes',
-            'CONFIRM_DELETE': 'Do you really want to delete this scope?'
+            'CONFIRM_DELETE': 'Do you really want to delete this scope?',
+            'CONFIRM_DELETE_SCOPE_CLAIM': 'Do you really want to delete the scope claim “{{scopeClaimName}}“?'
         },
         'NEW': {
             'TITLE': 'Create a new scope',

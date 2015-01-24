@@ -88,8 +88,13 @@
         };
 
         $scope.removeScopeClaim = function (index) {
-            $scope.scope.scopeClaims.splice(index, 1);
-            save();
+            confirmDialog.confirmTranslated('SCOPES.OVERVIEW.CONFIRM_DELETE_SCOPE_CLAIM', null, null, null, {
+                scopeClaimName: $scope.scope.scopeClaims[index].name
+            })
+                .then(function () {
+                    $scope.scope.scopeClaims.splice(index, 1);
+                    save();
+                });
         }
     }
 
