@@ -31,10 +31,13 @@ window.thinktecture.translations.en = {
         'OVERVIEW': {
             'TITLE': 'Scopes',
             'CONFIRM_DELETE': 'Do you really want to delete this scope?',
-            'CONFIRM_DELETE_SCOPE_CLAIM': 'Do you really want to delete the scope claim “{{scopeClaimName}}“?'
+            'CONFIRM_DELETE_SCOPE_CLAIM': 'Do you really want to delete the scope claim “{{scopeClaimName}}“?',
+            'NEW_IDENTITY_SCOPE': 'New identity scope',
+            'NEW_RESOURCE_SCOPE': 'New resource scope'
         },
         'NEW': {
-            'TITLE': 'Create a new scope',
+            'TITLE_IDENTITY_SCOPE': 'Create a new identity scope',
+            'TITLE_RESOURCE_SCOPE': 'Create a new resource scope',
             'NOTICE': 'You can either choose one of the OIDC default scopes or create your own. Additional settings can be provided after creating a new scope.',
             'SUCCESS': 'Your new scope has been created.',
             'OIDC_DEFAULT_SCOPE': 'OIDC default scopes'

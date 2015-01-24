@@ -35,12 +35,8 @@
                 });
         };
 
-        $scope.newScope = function () {
-            var modal = $modal.open({
-                templateUrl: 'app/scopes/newScope.html',
-                controller: 'newScopeController',
-                backdrop: 'static'
-            });
+        function newScope (options) {
+            var modal = $modal.open(options);
 
             modal.result
                 .then(function () {
@@ -51,6 +47,22 @@
                         uiHelper.showErrorMessage(err, $translate.instant('SCOPES.ERRORS.COULD_NOT_CREATE_NEW_SCOPE'))
                     }
                 });
+        }
+
+        $scope.newIdentityScope = function () {
+            newScope({
+                templateUrl: 'app/scopes/newIdentityScope.html',
+                controller: 'newIdentityScopeController',
+                backdrop: 'static'
+            });
+        };
+
+        $scope.newResourceScope = function () {
+            newScope({
+                templateUrl: 'app/scopes/newResourceScope.html',
+                controller: 'newResourceScopeController',
+                backdrop: 'static'
+            });
         };
 
         $scope.refresh = refresh;

@@ -9,22 +9,18 @@
      * @param {SpinnerService} spinnerService
      * @constructor
      */
-    function NewScopeController($scope, $modalInstance, lookupContainer, scopesWebApi, spinnerService) {
-        $scope.scopeTypes = lookupContainer.getLookupList(lookupContainer.keys.scopeTypes);
-        $scope.oidcScopes = lookupContainer.getLookupList(lookupContainer.keys.oidcScopes);
+    function NewIdentityScopeController($scope, $modalInstance, lookupContainer, scopesWebApi, spinnerService) {
+        $scope.oidcScopes = lookupContainer.getData(lookupContainer.keys.oidcScopes);
         $scope.scope = {};
+        $scope.scope.type = lookupContainer.getData(lookupContainer.keys.scopeTypes).identity.enumValue;
 
         $scope.oidcScopeChanged = function () {
             if (!$scope.selectedOidcScope) {
                 return;
             }
 
-            var oidcScope = _.find($scope.oidcScopes, function (item) {
-               return item.value.value === $scope.selectedOidcScope;
-            });
-
-            $scope.scope.name = oidcScope.value.value;
-            $scope.scope.displayName = oidcScope.value.text;
+            $scope.scope.name = $scope.selectedOidcScope.value;
+            $scope.scope.displayName = $scope.selectedOidcScope.text;
         };
 
         $scope.cancel = function () {
@@ -46,5 +42,5 @@
         };
     }
 
-    app.module.controller('newScopeController', NewScopeController);
+    app.module.controller('newIdentityScopeController', NewIdentityScopeController);
 })();

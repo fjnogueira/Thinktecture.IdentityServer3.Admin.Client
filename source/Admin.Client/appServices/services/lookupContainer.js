@@ -55,6 +55,15 @@
                 return {key: key, value: property ? value[property] : value};
             })
         };
+
+        /**
+         * Returns the original data
+         * @param {String} name
+         * @returns {*}
+         */
+        this.getData = function (name) {
+            return data[name] || {};
+        };
     }
 
     app.module.service('lookupContainer', LookupContainer);
