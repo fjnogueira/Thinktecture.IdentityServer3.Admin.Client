@@ -51,6 +51,17 @@
                 .preferredLanguage("en");
         });
 
+    app.module.config(
+        /**
+         * @param notificationServiceProvider
+         */
+        function (notificationServiceProvider) {
+            notificationServiceProvider.setDefaults({
+                styling: 'fontawesome',
+                delay: 1500
+            })
+    });
+
     app.module.constant('broadcastEvents', {
         DATA_REFRESH: 'dataRefresh'
     });
