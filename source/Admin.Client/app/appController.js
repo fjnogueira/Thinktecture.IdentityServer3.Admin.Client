@@ -51,6 +51,54 @@
             jwtId: {value: 'jti', text: 'JWT id'}
         };
 
+        var scopeToClaimMapping = {
+            openId: {
+                scope: oidcScopes.openId,
+                claims: [
+                    oidcClaims.subject
+                ]
+            },
+            phone: {
+                scope: oidcScopes.phone,
+                claims: [
+                    oidcClaims.phoneNumber,
+                    oidcClaims.phoneNumberVerified
+                ]
+            },
+            address: {
+                scope: oidcScopes.address,
+                claims: [
+                    oidcClaims.address
+                ]
+            },
+            email: {
+                scope: oidcScopes.email,
+                claims: [
+                    oidcClaims.email,
+                    oidcClaims.emailVerified
+                ]
+            },
+            profile: {
+                scope: oidcScopes.profile,
+                claims: [
+                    oidcClaims.name,
+                    oidcClaims.familyName,
+                    oidcClaims.givenName,
+                    oidcClaims.middleName,
+                    oidcClaims.nickName,
+                    oidcClaims.preferredUserName,
+                    oidcClaims.profile,
+                    oidcClaims.picture,
+                    oidcClaims.webSite,
+                    oidcClaims.gender,
+                    oidcClaims.birthDate,
+                    oidcClaims.zoneInfo,
+                    oidcClaims.locale,
+                    oidcClaims.updatedAt
+                ]
+            }
+        };
+
         // TODO: Should the text values be translated
         lookupContainer.addLookup(lookupContainer.keys.scopeTypes, {
             identity: {enumValue: 0, text: 'Identity'},
@@ -83,6 +131,7 @@
 
         lookupContainer.addLookup(lookupContainer.keys.oidcScopes, oidcScopes);
         lookupContainer.addLookup(lookupContainer.keys.oidcClaims, oidcClaims);
+        lookupContainer.addLookup(lookupContainer.keys.scopeToClaimMapping, scopeToClaimMapping);
     }
 
     app.module.controller('appController', AppController);

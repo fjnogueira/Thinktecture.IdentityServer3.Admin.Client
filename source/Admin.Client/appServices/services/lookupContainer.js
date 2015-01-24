@@ -14,7 +14,8 @@
             tokenExpiration: 'tokenExpiration',
             accessTokenType: 'accessTokenType',
             oidcScopes: 'oidcScopes',
-            oidcClaims: 'oidcClaims'
+            oidcClaims: 'oidcClaims',
+            scopeToClaimMapping: 'scopeToClaimMapping'
         };
 
         /**
