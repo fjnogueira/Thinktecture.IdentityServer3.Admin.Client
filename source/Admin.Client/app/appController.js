@@ -6,6 +6,15 @@
      * @constructor
      */
     function AppController(lookupContainer) {
+        var oidcScopes = {
+            openId: {value: 'openid', text: 'Open ID'},
+            profile: {value: 'profile', text: 'Profile'},
+            email: {value: 'email', text: 'E-Mail'},
+            address: {value: 'address', text: 'Address'},
+            phone: {value: 'phone', text: 'Phone'},
+            offlineAccess: {value: 'offline_access', text: 'Offline Access'}
+        };
+
         // TODO: Should the text values be translated
         lookupContainer.addLookup(lookupContainer.keys.scopeTypes, {
             identity: {enumValue: 0, text: 'Identity'},
@@ -36,14 +45,7 @@
             oneTimeOnly: {enumValue: 1, text: 'One time only'}
         });
 
-        lookupContainer.addLookup(lookupContainer.keys.oidcScopes, {
-            openId: {value: 'openid', text: 'Open ID'},
-            profile: {value: 'profile', text: 'Profile'},
-            email: {value: 'email', text: 'E-Mail'},
-            address: {value: 'address', text: 'Address'},
-            phone: {value: 'phone', text: 'Phone'},
-            offlineAccess: {value: 'offline_access', text: 'Offline Access'}
-        });
+        lookupContainer.addLookup(lookupContainer.keys.oidcScopes, oidcScopes);
     }
 
     app.module.controller('appController', AppController);
