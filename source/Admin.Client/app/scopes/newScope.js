@@ -19,10 +19,12 @@
                 return;
             }
 
-            var oidcScope = lookupContainer.getLookup(lookupContainer.keys.oidcScopes, $scope.selectedOidcScope);
+            var oidcScope = _.find($scope.oidcScopes, function (item) {
+               return item.value.value === $scope.selectedOidcScope;
+            });
 
-            $scope.scope.name = oidcScope.value;
-            $scope.scope.displayName = oidcScope.text;
+            $scope.scope.name = oidcScope.value.value;
+            $scope.scope.displayName = oidcScope.value.text;
         };
 
         $scope.cancel = function () {
