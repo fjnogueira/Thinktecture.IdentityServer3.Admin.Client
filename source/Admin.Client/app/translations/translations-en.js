@@ -38,7 +38,9 @@ window.thinktecture.translations.en = {
         'NEW': {
             'TITLE_IDENTITY_SCOPE': 'Create a new identity scope',
             'TITLE_RESOURCE_SCOPE': 'Create a new resource scope',
-            'NOTICE': 'You can either choose one of the OIDC default scopes or create your own. Additional settings can be provided after creating a new scope.',
+            'NOTICE': 'Additional settings can be provided after creating a new scope.',
+            'NOTICE_OIDC': 'You can either choose one of the OIDC default scopes or create your own.' +
+            'If you select an OIDC default scope, all necessary claims will be added automatically. Additional settings can be provided after creating a new scope.',
             'SUCCESS': 'Your new scope has been created.',
             'OIDC_DEFAULT_SCOPE': 'OIDC default scopes'
         },
