@@ -15,6 +15,42 @@
             offlineAccess: {value: 'offline_access', text: 'Offline Access'}
         };
 
+        var oidcClaims = {
+            subject: {value: 'sub', text: 'Subject'},
+            name: {value: 'name', text: 'Name'},
+            givenName: {value: 'given_name', text: 'Given name'},
+            familyName: {value: 'family_name', text: 'Family name'},
+            middleName: {value: 'middle_name', text: 'Middle name'},
+            nickName: {value: 'nickname', text: 'Nick name'},
+            preferredUserName: {value: 'preferred_username', text: 'Preferred username'},
+            profile: {value: 'profile', text: 'Profile'},
+            picture: {value: 'picture', text: 'Picture'},
+            webSite: {value: 'website', text: 'WebSite'},
+            email: {value: 'email', text: 'Email'},
+            emailVerified: {value: 'email_verified', text: 'Email verified'},
+            gender: {value: 'gender', text: 'Gender'},
+            birthDate: {value: 'birthdate', text: 'Birth date'},
+            zoneInfo: {value: 'zoneinfo', text: 'Zone info'},
+            locale: {value: 'locle', text: 'Locale'},
+            phoneNumber: {value: 'phone_number', text: 'Phone number'},
+            phoneNumberVerified: {value: 'phone_number_verified', text: 'Phone number verified'},
+            address: {value: 'address', text: 'Address'},
+            audience: {value: 'aud', text: 'Audience'},
+            issuer: {value: 'iss', text: 'Issuer'},
+            notBefore: {value: 'nbf', text: 'Not before'},
+            expiration: {value: 'exp', text: 'Expiration'},
+            updatedAt: {value: 'updated_at', text: 'Updated at'},
+            issuedAt: {value: 'iat', text: 'Issued at'},
+            authenticationMethod: {value: 'amr', text: 'Authentication method'},
+            authenticationContextClassReference: {value: 'acr', text: 'Authentication context class reference'},
+            authenticationTime: {value: 'auth_time', text: 'Authentication time'},
+            authorizedParty: {value: 'azp', text: 'Authorized party'},
+            accessTokenHash: {value: 'at_hash', text: 'Access token hash'},
+            authorizationCodeHash: {value: 'c_hash', text: 'Authorization code hash'},
+            nonce: {value: 'nonce', text: 'Nonce'},
+            jwtId: {value: 'jti', text: 'JWT id'}
+        };
+
         // TODO: Should the text values be translated
         lookupContainer.addLookup(lookupContainer.keys.scopeTypes, {
             identity: {enumValue: 0, text: 'Identity'},
@@ -46,6 +82,7 @@
         });
 
         lookupContainer.addLookup(lookupContainer.keys.oidcScopes, oidcScopes);
+        lookupContainer.addLookup(lookupContainer.keys.oidcClaims, oidcClaims);
     }
 
     app.module.controller('appController', AppController);

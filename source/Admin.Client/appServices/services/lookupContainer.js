@@ -13,7 +13,8 @@
             tokenUsage: 'tokenUsage',
             tokenExpiration: 'tokenExpiration',
             accessTokenType: 'accessTokenType',
-            oidcScopes: 'oidcScopes'
+            oidcScopes: 'oidcScopes',
+            oidcClaims: 'oidcClaims'
         };
 
         /**
