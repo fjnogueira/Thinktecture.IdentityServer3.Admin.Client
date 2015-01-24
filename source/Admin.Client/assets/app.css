@@ -2,10 +2,12 @@
   width: 100%;
   height: 400px;
 }
-.scopeOverviewTable tr td:nth-child(1) {
+.scopeDetailTable tr td:nth-child(1),
+.clientDetailTable tr td:nth-child(1) {
   width: 50%;
 }
-.scopeOverviewTable tr td:nth-child(2) {
+.scopeDetailTable tr td:nth-child(2),
+.clientDetailTable tr td:nth-child(2) {
   width: 50%;
 }
 div .row-margin-bottom {
