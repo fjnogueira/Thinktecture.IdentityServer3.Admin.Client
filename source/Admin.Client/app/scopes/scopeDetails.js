@@ -63,7 +63,7 @@
                     return scopesWebApi.remove($scope.scope.id);
                 })
                 .then(function () {
-                    $state.go('^');
+                    $state.go('^.overview');
                 }, function (err) {
                     if (angular.isDefined(err)) {
                         uiHelper.showErrorMessage(err, $translate.instant('SCOPES.ERRORS.COULD_NOT_DELETE'));

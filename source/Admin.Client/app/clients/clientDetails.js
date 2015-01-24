@@ -75,7 +75,7 @@
                     return clientsWebApi.remove($scope.client.id);
                 })
                 .then(function () {
-                    $state.go('^');
+                    $state.go('^.overview');
                 }, function (err) {
                     if (angular.isDefined(err)) {
                         uiHelper.showErrorMessage(err, $translate.instant('CLIENTS.ERRORS.COULD_NOT_DELETE'));
