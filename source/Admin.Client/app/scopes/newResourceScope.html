@@ -4,13 +4,6 @@
 <div class="modal-body">
     <p translate>SCOPES.NEW.NOTICE</p>
     <form role="form" name="newScopeForm">
-        <div class="form-group">
-            <label class="control-label" for="oidcScopes" translate>SCOPES.NEW.OIDC_DEFAULT_SCOPE</label>
-            <select id="oidcScopes" name="oidcScopes" class="form-control" ng-model="selectedOidcScope" ng-change="oidcScopeChanged()" ng-options="item.value.value as item.value.text for item in oidcScopes">
-                <option value="" translate>COMMON.PLEASE_SELECT</option>
-            </select>
-        </div>
-        <hr />
         <div class="form-group" ng-class="{'has-error': newScopeForm.scopeName.$error.required && newScopeForm.scopeName.$touched}">
             <label class="control-label" for="scopeName" translate>SCOPES.COMMON.NAME</label>
             <input type="text" ng-model="scope.name" class="form-control" id="scopeName" name="scopeName" required />
