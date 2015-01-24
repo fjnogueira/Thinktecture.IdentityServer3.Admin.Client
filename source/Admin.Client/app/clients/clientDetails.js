@@ -4,6 +4,7 @@
      * @constructor
      * @param $scope
      * @param $stateParams
+     * @param $state
      * @param $translate
      * @param {ClientsWebApi} clientsWebApi
      * @param {UiHelper} uiHelper
@@ -12,7 +13,7 @@
      * @param {SpinnerService} spinnerService
      */
     "use strict";
-    function ClientDetailsController($scope, $stateParams, $translate, clientsWebApi, uiHelper, lookupContainer, confirmDialog, spinnerService) {
+    function ClientDetailsController($scope, $stateParams, $state, $translate, clientsWebApi, uiHelper, lookupContainer, confirmDialog, spinnerService) {
         loadData();
 
         $scope.flows = lookupContainer.getLookupList(lookupContainer.keys.flows);
