@@ -50,19 +50,19 @@
     <tr>
         <td>{{ 'SCOPES.COMMON.EMPHASIZE' | translate }}</td>
         <td>
-            <yes-no-toggle ng-model="scope.emphasize"></yes-no-toggle>
+            <yes-no-toggle toggle="save()" ng-model="scope.emphasize"></yes-no-toggle>
         </td>
     </tr>
     <tr>
         <td>{{ 'SCOPES.COMMON.INCLUDE_ALL_CLAIMS_FOR_USER' | translate }}</td>
         <td>
-            <yes-no-toggle ng-model="scope.includeAllClaimsForUser"></yes-no-toggle>
+            <yes-no-toggle toggle="save()" ng-model="scope.includeAllClaimsForUser"></yes-no-toggle>
         </td>
     </tr>
     <tr>
         <td>{{ 'SCOPES.COMMON.SHOW_IN_DISCOVERY_DOCUMENT' | translate }}</td>
         <td>
-            <yes-no-toggle ng-model="scope.showInDiscoveryDocument"></yes-no-toggle>
+            <yes-no-toggle toggle="save()" ng-model="scope.showInDiscoveryDocument"></yes-no-toggle>
         </td>
     </tr>
     </tbody>
