@@ -69,13 +69,14 @@
          * @param {string} [okTextTranslationKey=COMMON.OK] TranslationKey for "OK"-button
          * @param {string} [cancelTextTranslationKey=COMMON.CANCEL] TranslationKey for "Cancel"-button
          * @param {string} [titleTextTranslationKey=COMMON.PLEASE_CONFIRM] TranslationKey for dialog's headline
+         * @param {object} [interpolationParameters=null] Parameters which will be used for interpolation (e.g. to replace variables)
          */
-        this.confirmTranslated = function (textTranslationKey, okTextTranslationKey, cancelTextTranslationKey, titleTextTranslationKey) {
+        this.confirmTranslated = function (textTranslationKey, okTextTranslationKey, cancelTextTranslationKey, titleTextTranslationKey, interpolationParameters) {
             return openConfirmDialog(
-                $translate.instant(textTranslationKey),
-                $translate.instant(okTextTranslationKey || 'COMMON.OK'),
-                $translate.instant(cancelTextTranslationKey || 'COMMON.CANCEL'),
-                $translate.instant(titleTextTranslationKey || 'COMMON.PLEASE_CONFIRM'));
+                $translate.instant(textTranslationKey, interpolationParameters),
+                $translate.instant(okTextTranslationKey || 'COMMON.OK', interpolationParameters),
+                $translate.instant(cancelTextTranslationKey || 'COMMON.CANCEL', interpolationParameters),
+                $translate.instant(titleTextTranslationKey || 'COMMON.PLEASE_CONFIRM', interpolationParameters));
         }
     }
 
