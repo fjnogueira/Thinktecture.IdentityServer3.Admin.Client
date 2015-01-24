@@ -42,7 +42,8 @@ window.thinktecture.translations.en = {
             'NOTICE_OIDC': 'You can either choose one of the OIDC default scopes or create your own.' +
             'If you select an OIDC default scope, all necessary claims will be added automatically. Additional settings can be provided after creating a new scope.',
             'SUCCESS': 'Your new scope has been created.',
-            'OIDC_DEFAULT_SCOPE': 'OIDC default scopes'
+            'OIDC_DEFAULT_SCOPE': 'OIDC default scopes',
+            'SCOPES_WILL_BE_ADDED': 'The following claims will be added to the scope:'
         },
         'NEW_SCOPE_CLAIM': {
             'TITLE': 'Create a new scope claim'

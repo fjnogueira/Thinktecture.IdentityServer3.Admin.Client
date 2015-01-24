@@ -31,7 +31,7 @@
             gender: {value: 'gender', text: 'Gender'},
             birthDate: {value: 'birthdate', text: 'Birth date'},
             zoneInfo: {value: 'zoneinfo', text: 'Zone info'},
-            locale: {value: 'locle', text: 'Locale'},
+            locale: {value: 'locale', text: 'Locale'},
             phoneNumber: {value: 'phone_number', text: 'Phone number'},
             phoneNumberVerified: {value: 'phone_number_verified', text: 'Phone number verified'},
             address: {value: 'address', text: 'Address'},

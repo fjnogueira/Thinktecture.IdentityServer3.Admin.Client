@@ -10,6 +10,18 @@
                 <option value="" translate>COMMON.PLEASE_SELECT</option>
             </select>
         </div>
+        <div class="form-group" ng-show="selectedOidcScope">
+            <label class="control-label" translate>SCOPES.DETAILS.ALWAYS_INCLUDE_IN_ID_TOKEN</label>
+            <div>
+                <on-off-toggle ng-model="alwaysIncludeInIdToken"></on-off-toggle>
+            </div>
+        </div>
+        <div ng-show="selectedOidcScope && mappedClaims && mappedClaims.length > 0">
+            <label class="control-label" translate>SCOPES.NEW.SCOPES_WILL_BE_ADDED</label>
+            <div ng-repeat="claim in mappedClaims">
+                {{claim.text}} ({{claim.value}})
+            </div>
+        </div>
         <hr />
         <div class="form-group" ng-class="{'has-error': newScopeForm.scopeName.$error.required && newScopeForm.scopeName.$touched}">
             <label class="control-label" for="scopeName" translate>SCOPES.COMMON.NAME</label>
