@@ -12,7 +12,8 @@
             flows: 'flows',
             tokenUsage: 'tokenUsage',
             tokenExpiration: 'tokenExpiration',
-            accessTokenType: 'accessTokenType'
+            accessTokenType: 'accessTokenType',
+            oidcScopes: 'oidcScopes'
         };
 
         /**

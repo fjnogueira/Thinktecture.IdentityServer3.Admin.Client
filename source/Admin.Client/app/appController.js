@@ -35,6 +35,15 @@
             reUse: {enumValue: 0, text: 'Re use'},
             oneTimeOnly: {enumValue: 1, text: 'One time only'}
         });
+
+        lookupContainer.addLookup(lookupContainer.keys.oidcScopes, {
+            openId: {value: 'openid', text: 'Open ID'},
+            profile: {value: 'profile', text: 'Profile'},
+            email: {value: 'email', text: 'E-Mail'},
+            address: {value: 'address', text: 'Address'},
+            phone: {value: 'phone', text: 'Phone'},
+            offlineAccess: {value: 'offline_access', text: 'Offline Access'}
+        });
     }
 
     app.module.controller('appController', AppController);
