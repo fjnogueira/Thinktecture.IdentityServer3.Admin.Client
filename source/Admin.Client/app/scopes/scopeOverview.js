@@ -4,14 +4,16 @@
     /**
      * @constructor
      * @param $scope
+     * @param $rootScope
      * @param $modal
      * @param $translate
      * @param {ScopesWebApi} scopesWebApi
      * @param {CellTemplate} cellTemplate
      * @param {UiHelper} uiHelper
      * @param {SpinnerService} spinnerService
+     * @param {broadcastEvents} broadcastEvents
      */
-    function ScopeOverviewController($scope, $modal, $translate, scopesWebApi, cellTemplate, uiHelper, spinnerService) {
+    function ScopeOverviewController($scope, $rootScope, $modal, $translate, scopesWebApi, cellTemplate, uiHelper, spinnerService, broadcastEvents) {
         $scope.columns = [
             {field: 'displayName', cellTemplate: cellTemplate.templates.scope},
             {field: 'description'},
@@ -43,7 +45,7 @@
             modal.result
                 .then(function () {
                     uiHelper.success($translate.instant('SCOPES.NEW.SUCCESS'));
-                    // ToDo: Refresh
+                    $rootScope.$broadcast(broadcastEvents.DATA_REFRESH);
                 }, function (err) {
                     if (err) {
                         uiHelper.showErrorMessage(err, $translate.instant('SCOPES.ERRORS.COULD_NOT_CREATE_NEW_SCOPE'))

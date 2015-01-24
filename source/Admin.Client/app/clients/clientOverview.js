@@ -1,17 +1,19 @@
 (function ($, jQuery) {
+    "use strict";
 
     /**
      * @constructor
      * @param $scope
+     * @param $rootScope
      * @param $translate
      * @param $modal
      * @param {ClientsWebApi} clientsWebApi
      * @param {CellTemplate} cellTemplate
      * @param {UiHelper} uiHelper
      * @param {SpinnerService} spinnerService
+     * @param {broadcastEvents} broadcastEvents
      */
-    "use strict";
-    function ClientOverviewController($scope, $translate, $modal, clientsWebApi, cellTemplate, uiHelper, spinnerService) {
+    function ClientOverviewController($scope, $rootScope, $translate, $modal, clientsWebApi, cellTemplate, uiHelper, spinnerService, broadcastEvents) {
         $scope.columns = [
             {field: 'clientId', cellTemplate: cellTemplate.templates.client},
             {field: 'clientName'},
@@ -43,7 +45,7 @@
             modal.result
                 .then(function () {
                     uiHelper.success($translate.instant('CLIENTS.NEW.SUCCESS'));
-                    // ToDo: Refresh
+                    $rootScope.$broadcast(broadcastEvents.DATA_REFRESH);
                 }, function (err) {
                     if (err) {
                         uiHelper.showErrorMessage(err, $translate.instant('CLIENTS.ERRORS.COULD_NOT_CREATE_NEW_CLIENT'))

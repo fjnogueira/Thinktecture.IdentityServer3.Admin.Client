@@ -1,7 +1,7 @@
 (function ($, jQuery) {
     "use strict";
 
-    app.module.directive('defaultGrid', function (uiGridHelper) {
+    app.module.directive('defaultGrid', function (uiGridHelper, broadcastEvents) {
         return {
             restrict: 'E',
             scope: {
@@ -45,6 +45,8 @@
                         });
                     }
                 };
+
+                scope.$on(broadcastEvents.DATA_REFRESH, refresh);
 
                 refresh();
             }

@@ -50,4 +50,13 @@
                 .translations("en", thinktecture.translations.en)
                 .preferredLanguage("en");
         });
+
+    app.module.constant('broadcastEvents', {
+        DATA_REFRESH: 'hideMenu'
+    });
+
+    /**
+     * @typedef {object} broadcastEvents
+     * @property {string} DATA_REFRESH - Will be broadcasted when new data is available and all directives should call their refresh functions.
+     */
 })();
