@@ -77,6 +77,7 @@
                 })
                 .then(function () {
                     $state.go('^.overview');
+                    uiHelper.success($translate.instant('CLIENTS.OVERVIEW.DELETE_SUCCESSFUL'));
                 }, function (err) {
                     if (angular.isDefined(err)) {
                         uiHelper.showErrorMessage(err, $translate.instant('CLIENTS.ERRORS.COULD_NOT_DELETE'));

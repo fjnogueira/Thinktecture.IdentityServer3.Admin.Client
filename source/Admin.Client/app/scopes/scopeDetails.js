@@ -64,6 +64,7 @@
                 })
                 .then(function () {
                     $state.go('^.overview');
+                    uiHelper.success($translate.instant('SCOPES.OVERVIEW.DELETE_SUCCESSFUL'));
                 }, function (err) {
                     if (angular.isDefined(err)) {
                         uiHelper.showErrorMessage(err, $translate.instant('SCOPES.ERRORS.COULD_NOT_DELETE'));

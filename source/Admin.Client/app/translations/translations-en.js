@@ -33,7 +33,8 @@ window.thinktecture.translations.en = {
             'CONFIRM_DELETE': 'Do you really want to delete this scope?',
             'CONFIRM_DELETE_SCOPE_CLAIM': 'Do you really want to delete the scope claim “{{scopeClaimName}}“?',
             'NEW_IDENTITY_SCOPE': 'New identity scope',
-            'NEW_RESOURCE_SCOPE': 'New resource scope'
+            'NEW_RESOURCE_SCOPE': 'New resource scope',
+            'DELETE_SUCCESSFUL': 'The scope has been deleted successfully'
         },
         'NEW': {
             'TITLE_IDENTITY_SCOPE': 'Create a new identity scope',
@@ -98,7 +99,8 @@ window.thinktecture.translations.en = {
         },
         'OVERVIEW': {
             'TITLE': 'Clients',
-            'CONFIRM_DELETE': 'Do you really want to delete this client?'
+            'CONFIRM_DELETE': 'Do you really want to delete this client?',
+            'DELETE_SUCCESSFUL': 'The client has been deleted successfully'
         },
         'NEW': {
             'TITLE': 'Create a new client',
