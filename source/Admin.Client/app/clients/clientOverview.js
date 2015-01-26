@@ -47,7 +47,7 @@
                     uiHelper.success($translate.instant('CLIENTS.NEW.SUCCESS'));
                     $rootScope.$broadcast(broadcastEvents.DATA_REFRESH);
                 }, function (err) {
-                    if (err) {
+                    if (err && err !== 'escape key press') {
                         uiHelper.showErrorMessage(err, $translate.instant('CLIENTS.ERRORS.COULD_NOT_CREATE_NEW_CLIENT'))
                     }
                 });

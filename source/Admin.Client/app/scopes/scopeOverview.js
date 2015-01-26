@@ -43,7 +43,7 @@
                     uiHelper.success($translate.instant('SCOPES.NEW.SUCCESS'));
                     $rootScope.$broadcast(broadcastEvents.DATA_REFRESH);
                 }, function (err) {
-                    if (err) {
+                    if (err && err !== 'escape key press') {
                         uiHelper.showErrorMessage(err, $translate.instant('SCOPES.ERRORS.COULD_NOT_CREATE_NEW_SCOPE'))
                     }
                 });
