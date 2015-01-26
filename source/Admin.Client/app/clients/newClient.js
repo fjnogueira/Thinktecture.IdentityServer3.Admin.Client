@@ -17,8 +17,8 @@
             spinnerService.startGlobalSpinner();
 
             clientsWebApi.add($scope.client)
-                .then(function () {
-                    $modalInstance.close();
+                .then(function (newId) {
+                    $modalInstance.close(newId);
                 }, function (err) {
                     $modalInstance.dismiss(err);
                 })

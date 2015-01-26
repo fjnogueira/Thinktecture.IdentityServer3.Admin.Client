@@ -4,16 +4,15 @@
     /**
      * @constructor
      * @param $scope
-     * @param $rootScope
+     * @param $state
      * @param $translate
      * @param $modal
      * @param {ClientsWebApi} clientsWebApi
      * @param {CellTemplate} cellTemplate
      * @param {UiHelper} uiHelper
      * @param {SpinnerService} spinnerService
-     * @param {broadcastEvents} broadcastEvents
      */
-    function ClientOverviewController($scope, $rootScope, $translate, $modal, clientsWebApi, cellTemplate, uiHelper, spinnerService, broadcastEvents) {
+    function ClientOverviewController($scope, $state, $translate, $modal, clientsWebApi, cellTemplate, uiHelper, spinnerService) {
         $scope.columns = [
             {field: 'clientId', cellTemplate: cellTemplate.templates.client},
             {field: 'clientName'},
@@ -43,9 +42,10 @@
             });
 
             modal.result
-                .then(function () {
+                .then(function (newId) {
                     uiHelper.success($translate.instant('CLIENTS.NEW.SUCCESS'));
-                    $rootScope.$broadcast(broadcastEvents.DATA_REFRESH);
+
+                    $state.go('clients.details', { clientId: newId });
                 }, function (err) {
                     if (err && err !== 'escape key press') {
                         uiHelper.showErrorMessage(err, $translate.instant('CLIENTS.ERRORS.COULD_NOT_CREATE_NEW_CLIENT'))
