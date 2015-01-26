@@ -161,11 +161,33 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.js" />
+    <Content Include="appServices\appConfiguration.js" />
+    <Content Include="appServices\directives\clientDetailsTable.html" />
+    <Content Include="appServices\directives\clientDetailsTable.js" />
+    <Content Include="appServices\directives\defaultGrid.html" />
+    <Content Include="appServices\directives\defaultGrid.js" />
+    <Content Include="appServices\directives\footerNav.html" />
+    <Content Include="appServices\directives\footerNav.js" />
     <Content Include="appServices\directives\navbar.html" />
     <Content Include="appServices\directives\navbar.js" />
+    <Content Include="appServices\directives\onOffToggle.html" />
+    <Content Include="appServices\directives\onOffToggle.js" />
+    <Content Include="appServices\directives\paging.html" />
+    <Content Include="appServices\directives\paging.js" />
+    <Content Include="appServices\directives\spinner.html" />
+    <Content Include="appServices\directives\spinner.js" />
+    <Content Include="appServices\directives\yesNoToggle.html" />
+    <Content Include="appServices\directives\yesNoToggle.js" />
+    <Content Include="appServices\routing.js" />
+    <Content Include="appServices\run.js" />
+    <Content Include="appServices\services\cellTemplate.js" />
     <Content Include="appServices\services\clientsWebApi.js" />
     <Content Include="appServices\services\configuration.js" />
+    <Content Include="appServices\services\confirmDialog.js" />
+    <Content Include="appServices\services\lookupContainer.js" />
     <Content Include="appServices\services\scopesWebApi.js" />
+    <Content Include="appServices\services\spinnerService.js" />
+    <Content Include="appServices\services\uiGridHelper.js" />
     <Content Include="appServices\services\uiHelper.js" />
     <Content Include="appServices\services\webApi.js" />
     <Content Include="app\appController.js" />
@@ -173,54 +195,31 @@
     <Content Include="app\clients\clientDetails.js" />
     <Content Include="app\clients\clientOverview.html" />
     <Content Include="app\clients\clientOverview.js" />
-    <Content Include="app\routing.js" />
+    <Content Include="app\clients\newClient.html" />
+    <Content Include="app\clients\newClient.js" />
+    <Content Include="app\scopes\newIdentityScope.html" />
+    <Content Include="app\scopes\newIdentityScope.js" />
+    <Content Include="app\scopes\newResourceScope.html" />
+    <Content Include="app\scopes\newResourceScope.js" />
+    <Content Include="app\scopes\newScopeClaim.html" />
+    <Content Include="app\scopes\newScopeClaim.js" />
     <Content Include="app\scopes\scopeDetails.html" />
     <Content Include="app\scopes\scopeDetails.js" />
     <Content Include="app\scopes\scopeOverview.html" />
     <Content Include="app\scopes\scopeOverview.js" />
     <Content Include="app\start\start.html" />
     <Content Include="app\start\start.js" />
+    <Content Include="app\translations\translations-en.js" />
+    <Content Include="assets\app.css" />
+    <Content Include="assets\favicon.ico" />
+    <Content Include="assets\GitHub_Logo.png" />
+    <Content Include="assets\thinktecture_logo.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="index.cshtml" />
     <Content Include="libs\02_font-awesome\css\font-awesome.css" />
-    <Content Include="libs\02_font-awesome\fonts\fontawesome-webfont.svg" />
-    <Content Include="libs\05_fastclick\fastclick.js" />
-    <Content Include="libs\06_jquery\jquery.js" />
-    <Content Include="libs\10_bootstrap\bootstrap-theme.css" />
-    <Content Include="libs\10_bootstrap\bootstrap.css" />
-    <Content Include="libs\10_bootstrap\bootstrap.js" />
-    <Content Include="libs\10_bootstrap\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="libs\20_angularjs\angular.js" />
-    <Content Include="libs\21_angular-extras\angular-locale_de-de.js" />
-    <Content Include="libs\21_ui-router\angular-ui-router.js" />
-    <Content Include="libs\22_ui-grid\ui-grid-unstable.css" />
-    <Content Include="libs\22_ui-grid\ui-grid-unstable.js" />
-    <Content Include="libs\22_ui-grid\ui-grid-unstable.svg" />
-    <Content Include="libs\52_pnotify\pnotify.custom.css" />
-    <Content Include="libs\52_pnotify\pnotify.custom.js" />
-    <Content Include="libs\52_pnotify\pnotify.js" />
-    <Content Include="libs\99_appInit\appInit.js" />
-    <Content Include="Web.config" />
-    <Content Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="appServices\filters\" />
-    <Folder Include="App_Data\" />
-    <Folder Include="assets\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="packages.config">
-      <SubType>Designer</SubType>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="libs\02_font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="libs\02_font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="libs\02_font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="libs\02_font-awesome\fonts\fontawesome-webfont.woff" />
     <Content Include="libs\02_font-awesome\fonts\FontAwesome.otf" />
@@ -250,14 +249,61 @@
     <Content Include="libs\02_font-awesome\scss\_spinning.scss" />
     <Content Include="libs\02_font-awesome\scss\_stacked.scss" />
     <Content Include="libs\02_font-awesome\scss\_variables.scss" />
+    <Content Include="libs\05_fastclick\fastclick.js" />
+    <Content Include="libs\06_jquery\jquery.js" />
+    <Content Include="libs\07_underscore-js\underscore.js" />
+    <Content Include="libs\10_bootstrap\bootstrap-theme.css" />
     <Content Include="libs\10_bootstrap\bootstrap-theme.css.map" />
+    <Content Include="libs\10_bootstrap\bootstrap-theme.min.css" />
+    <Content Include="libs\10_bootstrap\bootstrap.css" />
     <Content Include="libs\10_bootstrap\bootstrap.css.map" />
+    <Content Include="libs\10_bootstrap\bootstrap.js" />
     <Content Include="libs\10_bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="libs\10_bootstrap\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="libs\10_bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="libs\10_bootstrap\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="libs\22_ui-grid\ui-grid-unstable.eot" />
-    <Content Include="libs\22_ui-grid\ui-grid-unstable.ttf" />
-    <Content Include="libs\22_ui-grid\ui-grid-unstable.woff" />
+    <Content Include="libs\20_angularjs\angular.js" />
+    <Content Include="libs\21_angular-extras\angular-locale_de-de.js" />
+    <Content Include="libs\21_ui-router\angular-ui-router.js" />
+    <Content Include="libs\22_ui-grid\ui-grid-unstable.css" />
+    <Content Include="libs\22_ui-grid\ui-grid-unstable.js" />
+    <Content Include="libs\22_ui-grid\ui-grid.svg" />
+    <Content Include="libs\23_angular-toggle-switch\angular-toggle-switch-bootstrap.css" />
+    <Content Include="libs\23_angular-toggle-switch\angular-toggle-switch.css" />
+    <Content Include="libs\23_angular-toggle-switch\angular-toggle-switch.js" />
+    <Content Include="libs\25_angular-translate\angular-translate.js" />
+    <Content Include="libs\26_angular-xeditable\xeditable.css" />
+    <Content Include="libs\26_angular-xeditable\xeditable.js" />
+    <Content Include="libs\27_ui-bootstrap\ui-bootstrap-tpls-0.12.0.js" />
+    <Content Include="libs\28_angular-spinner\angular-spinner.js" />
+    <Content Include="libs\28_angular-spinner\spin.js" />
+    <Content Include="libs\52_pnotify\pnotify.custom.css" />
+    <Content Include="libs\52_pnotify\pnotify.custom.js" />
+    <Content Include="libs\52_pnotify\pnotify.js" />
+    <Content Include="libs\99_appInit\appInit.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="appServices\filters\" />
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\less\app.less" />
+    <Content Include="libs\10_bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="libs\22_ui-grid\ui-grid.eot" />
+    <Content Include="libs\22_ui-grid\ui-grid.ttf" />
+    <Content Include="libs\22_ui-grid\ui-grid.woff" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
