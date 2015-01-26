@@ -89,25 +89,25 @@
     <tr>
         <td>{{ 'CLIENTS.COMMON.ALLOW_LOCAL_LOGIN' | translate }}</td>
         <td>
-            <yes-no-toggle ng-model="client.allowLocalLogin"></yes-no-toggle>
+            <yes-no-toggle toggle="save()" ng-model="client.allowLocalLogin"></yes-no-toggle>
         </td>
     </tr>
     <tr>
         <td>{{ 'CLIENTS.COMMON.INCLUDE_JWT_ID' | translate }}</td>
         <td>
-            <yes-no-toggle ng-model="client.includeJwtId"></yes-no-toggle>
+            <yes-no-toggle toggle="save()" ng-model="client.includeJwtId"></yes-no-toggle>
         </td>
     </tr>
     <tr>
         <td>{{ 'CLIENTS.COMMON.ALWAYS_SEND_CLIENT_CLAIMS' | translate }}</td>
         <td>
-            <yes-no-toggle ng-model="client.alwaysSendClientClaims"></yes-no-toggle>
+            <yes-no-toggle toggle="save()" ng-model="client.alwaysSendClientClaims"></yes-no-toggle>
         </td>
     </tr>
     <tr>
         <td>{{ 'CLIENTS.COMMON.PREFIX_CLIENT_CLAIMS' | translate }}</td>
         <td>
-            <yes-no-toggle ng-model="client.prefixClientClaims"></yes-no-toggle>
+            <yes-no-toggle toggle="save()" ng-model="client.prefixClientClaims"></yes-no-toggle>
         </td>
     </tr>
     </tbody>
