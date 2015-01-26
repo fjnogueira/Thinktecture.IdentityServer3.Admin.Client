@@ -11,7 +11,10 @@ window.thinktecture.translations.en = {
 
     'START': {
         'TITLE': 'Thinktecture IdentityServer3 Admin UI',
-        'WELCOME_INFORMATION': 'Welcome to Thinktecture IdentityServer3 Admin UI! Please use the menu at the top of the page to go to the specific settings.'
+        'WELCOME_INFORMATION': 'Welcome to Thinktecture IdentityServer3 Admin UI! Please use the menu at the top of the page to go to the specific settings.',
+        'STATISTICS': 'Statistics',
+        'CLIENTS_TOTAL_COUNT': 'Clients',
+        'SCOPES_TOTAL_COUNT': 'Scopes'
     },
 
     'SCOPES': {
@@ -136,6 +139,8 @@ window.thinktecture.translations.en = {
             'NO': 'No'
         },
         'NO_DATA': 'No data',
+        'DESCRIPTION': 'Description',
+        'VALUE': 'Value',
         'NEW': 'New',
         'OK': 'OK',
         'CANCEL': 'Cancel',
