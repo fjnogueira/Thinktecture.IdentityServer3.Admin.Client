@@ -68,8 +68,8 @@
             var payload = createPayload();
 
             scopesWebApi.add(payload)
-                .then(function () {
-                    $modalInstance.close();
+                .then(function (newId) {
+                    $modalInstance.close(newId);
                 }, function (err) {
                     $modalInstance.dismiss(err);
                 })

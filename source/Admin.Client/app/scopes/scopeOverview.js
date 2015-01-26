@@ -4,16 +4,15 @@
     /**
      * @constructor
      * @param $scope
-     * @param $rootScope
+     * @param $state
      * @param $modal
      * @param $translate
      * @param {ScopesWebApi} scopesWebApi
      * @param {CellTemplate} cellTemplate
      * @param {UiHelper} uiHelper
      * @param {SpinnerService} spinnerService
-     * @param {broadcastEvents} broadcastEvents
      */
-    function ScopeOverviewController($scope, $rootScope, $modal, $translate, scopesWebApi, cellTemplate, uiHelper, spinnerService, broadcastEvents) {
+    function ScopeOverviewController($scope, $state, $modal, $translate, scopesWebApi, cellTemplate, uiHelper, spinnerService) {
         $scope.columns = [
             {field: 'displayName', cellTemplate: cellTemplate.templates.scope},
             {field: 'description'},
@@ -39,9 +38,10 @@
             var modal = $modal.open(options);
 
             modal.result
-                .then(function () {
+                .then(function (newId) {
                     uiHelper.success($translate.instant('SCOPES.NEW.SUCCESS'));
-                    $rootScope.$broadcast(broadcastEvents.DATA_REFRESH);
+
+                    $state.go('scopes.details', {scopeId: newId});
                 }, function (err) {
                     if (err && err !== 'escape key press') {
                         uiHelper.showErrorMessage(err, $translate.instant('SCOPES.ERRORS.COULD_NOT_CREATE_NEW_SCOPE'))
