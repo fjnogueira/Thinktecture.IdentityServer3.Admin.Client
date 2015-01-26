@@ -7,7 +7,7 @@
      */
     function DashboardWebApi(webApi) {
         this.totalCounts = function () {
-            return webApi.performGetRequest('dashboard/totalCount', null);
+            return webApi.performGetRequest('dashboard/totalCounts', null);
         }
     }
 
